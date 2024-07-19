@@ -1,0 +1,212 @@
+{
+    "name": "sfTrashComb",
+    "filename": "sfTrashComb.dsp",
+    "version": "2.74.8",
+    "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
+    "include_pathnames": [
+        "/share/faust",
+        "/usr/local/share/faust",
+        "/usr/share/faust",
+        "."
+    ],
+    "size": 524384,
+    "code": "OPyy",
+    "inputs": 1,
+    "outputs": 1,
+    "meta": [
+        {
+            "author": "Christophe Lebreton"
+        },
+        {
+            "compile_options": "-single -scal -e ../sfTrashComb.dsp -o sfTrashComb.dsp"
+        },
+        {
+            "copyright": "SmartFaust - GRAME(c)2013-2018"
+        },
+        {
+            "delays_lib_name": "Faust Delay Library"
+        },
+        {
+            "delays_lib_version": "1.1.0"
+        },
+        {
+            "filename": "sfTrashComb.dsp"
+        },
+        {
+            "filters_lib_fb_fcomb_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_fb_fcomb_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_fb_fcomb_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_lowpass0_highpass1": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_name": "Faust Filters Library"
+        },
+        {
+            "filters_lib_version": "1.3.0"
+        },
+        {
+            "library_path0": "/usr/local/share/faust/stdfaust.lib"
+        },
+        {
+            "library_path1": "/usr/local/share/faust/filters.lib"
+        },
+        {
+            "library_path2": "/usr/local/share/faust/signals.lib"
+        },
+        {
+            "library_path3": "/usr/local/share/faust/maths.lib"
+        },
+        {
+            "library_path4": "/usr/local/share/faust/platform.lib"
+        },
+        {
+            "library_path5": "/usr/local/share/faust/delays.lib"
+        },
+        {
+            "license": "BSD & STK-4.3"
+        },
+        {
+            "maths_lib_author": "GRAME"
+        },
+        {
+            "maths_lib_copyright": "GRAME"
+        },
+        {
+            "maths_lib_license": "LGPL with exception"
+        },
+        {
+            "maths_lib_name": "Faust Math Library"
+        },
+        {
+            "maths_lib_version": "2.8.0"
+        },
+        {
+            "name": "sfTrashComb"
+        },
+        {
+            "platform_lib_name": "Generic Platform Library"
+        },
+        {
+            "platform_lib_version": "1.3.0"
+        },
+        {
+            "signals_lib_name": "Faust Signal Routing Library"
+        },
+        {
+            "signals_lib_version": "1.5.0"
+        },
+        {
+            "version": "2.74.9"
+        }
+    ],
+    "ui": [
+        {
+            "type": "vgroup",
+            "label": "sfTrashComb",
+            "items": [
+                {
+                    "type": "hgroup",
+                    "label": "sfTrashComb",
+                    "items": [
+                        {
+                            "type": "checkbox",
+                            "label": "ON/OFF",
+                            "shortname": "OFF",
+                            "address": "/sfTrashComb/sfTrashComb/ON/OFF",
+                            "index": 0
+                        },
+                        {
+                            "type": "vslider",
+                            "label": "Volume",
+                            "shortname": "Volume",
+                            "address": "/sfTrashComb/sfTrashComb/Volume",
+                            "index": 12,
+                            "init": 1,
+                            "min": 0,
+                            "max": 2,
+                            "step": 0.001
+                        }
+                    ]
+                },
+                {
+                    "type": "hgroup",
+                    "label": "sfTrashComb parameter(s)",
+                    "items": [
+                        {
+                            "type": "vslider",
+                            "label": "feedback",
+                            "shortname": "feedback",
+                            "address": "/sfTrashComb/sfTrashComb_parameter_s_/feedback",
+                            "index": 24,
+                            "meta": [
+                                {
+                                    "acc": "1 0 -10 0 10"
+                                },
+                                {
+                                    "color": "255 255 0"
+                                },
+                                {
+                                    "hidden": "1"
+                                }
+                            ],
+                            "init": 50,
+                            "min": 0,
+                            "max": 100,
+                            "step": 0.01
+                        },
+                        {
+                            "type": "vslider",
+                            "label": "freq",
+                            "shortname": "freq",
+                            "address": "/sfTrashComb/sfTrashComb_parameter_s_/freq",
+                            "index": 524336,
+                            "meta": [
+                                {
+                                    "acc": "0 0 -10 0 10"
+                                },
+                                {
+                                    "color": "255 0 0"
+                                },
+                                {
+                                    "hidden": "1"
+                                }
+                            ],
+                            "init": 2300,
+                            "min": 100,
+                            "max": 20000,
+                            "step": 0.001
+                        },
+                        {
+                            "type": "vslider",
+                            "label": "gain",
+                            "shortname": "gain",
+                            "address": "/sfTrashComb/sfTrashComb_parameter_s_/gain",
+                            "index": 524364,
+                            "meta": [
+                                {
+                                    "acc": "2 1 -10 0 10"
+                                },
+                                {
+                                    "color": "0 255 0"
+                                },
+                                {
+                                    "hidden": "1"
+                                }
+                            ],
+                            "init": 0.5,
+                            "min": 0,
+                            "max": 10,
+                            "step": 0.001
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

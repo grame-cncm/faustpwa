@@ -1,0 +1,17 @@
+{
+  "name": "Faust sfHell",
+  "short_name": "sfHell",
+  "start_url": "./index.html",
+  "description": "Progressive Web App for sfHell",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./icon.png",
+      "sizes": "390x390",
+      "type": "image/png"
+    }
+  ]
+}

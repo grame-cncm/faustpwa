@@ -1,0 +1,510 @@
+{
+    "name": "sfIter",
+    "filename": "sfIter.dsp",
+    "version": "2.74.8",
+    "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
+    "include_pathnames": [
+        "/share/faust",
+        "/usr/local/share/faust",
+        "/usr/share/faust",
+        "."
+    ],
+    "size": 779364,
+    "code": "8IEoAfQBHw==",
+    "inputs": 0,
+    "outputs": 1,
+    "meta": [
+        {
+            "analyzers_lib_name": "Faust Analyzer Library"
+        },
+        {
+            "analyzers_lib_version": "1.2.0"
+        },
+        {
+            "author": "Christophe Lebreton"
+        },
+        {
+            "basics_lib_name": "Faust Basic Element Library"
+        },
+        {
+            "basics_lib_tabulateNd": "Copyright (C) 2023 Bart Brouns <bart@magnetophon.nl>"
+        },
+        {
+            "basics_lib_version": "1.18.0"
+        },
+        {
+            "compile_options": "-single -scal -e ../sfIter.dsp -o sfIter.dsp"
+        },
+        {
+            "copyright": "SmartFaust - GRAME(c)2013-2018"
+        },
+        {
+            "delays_lib_name": "Faust Delay Library"
+        },
+        {
+            "delays_lib_version": "1.1.0"
+        },
+        {
+            "filename": "sfIter.dsp"
+        },
+        {
+            "filters_lib_allpass_comb_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_allpass_comb_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_allpass_comb_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_fir_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_fir_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_fir_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_iir_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_iir_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_iir_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_lowpass0_highpass1": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_lowpass0_highpass1_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_lowpass_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_lowpass_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_lowpass_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_name": "Faust Filters Library"
+        },
+        {
+            "filters_lib_peak_eq_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_peak_eq_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_peak_eq_cq_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_peak_eq_cq_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_peak_eq_cq_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_peak_eq_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_tf1_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_tf1_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_tf1_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_tf1s_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_tf1s_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_tf1s_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_tf2_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_tf2_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_tf2_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_tf2s_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_tf2s_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_tf2s_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_version": "1.3.0"
+        },
+        {
+            "library_path0": "/usr/local/share/faust/stdfaust.lib"
+        },
+        {
+            "library_path1": "/usr/local/share/faust/signals.lib"
+        },
+        {
+            "library_path10": "/usr/local/share/faust/delays.lib"
+        },
+        {
+            "library_path11": "/usr/local/share/faust/routes.lib"
+        },
+        {
+            "library_path2": "/usr/local/share/faust/filters.lib"
+        },
+        {
+            "library_path3": "/usr/local/share/faust/maths.lib"
+        },
+        {
+            "library_path4": "/usr/local/share/faust/platform.lib"
+        },
+        {
+            "library_path5": "/usr/local/share/faust/oscillators.lib"
+        },
+        {
+            "library_path6": "/usr/local/share/faust/basics.lib"
+        },
+        {
+            "library_path7": "/usr/local/share/faust/noises.lib"
+        },
+        {
+            "library_path8": "/usr/local/share/faust/analyzers.lib"
+        },
+        {
+            "library_path9": "/usr/local/share/faust/reverbs.lib"
+        },
+        {
+            "license": "BSD"
+        },
+        {
+            "maths_lib_author": "GRAME"
+        },
+        {
+            "maths_lib_copyright": "GRAME"
+        },
+        {
+            "maths_lib_license": "LGPL with exception"
+        },
+        {
+            "maths_lib_name": "Faust Math Library"
+        },
+        {
+            "maths_lib_version": "2.8.0"
+        },
+        {
+            "name": "sfIter"
+        },
+        {
+            "noises_lib_name": "Faust Noise Generator Library"
+        },
+        {
+            "noises_lib_version": "1.4.1"
+        },
+        {
+            "oscillators_lib_name": "Faust Oscillator Library"
+        },
+        {
+            "oscillators_lib_version": "1.5.1"
+        },
+        {
+            "platform_lib_name": "Generic Platform Library"
+        },
+        {
+            "platform_lib_version": "1.3.0"
+        },
+        {
+            "reverbs_lib_name": "Faust Reverb Library"
+        },
+        {
+            "reverbs_lib_version": "1.3.0"
+        },
+        {
+            "routes_lib_hadamard_author": "Remy Muller, revised by Romain Michon"
+        },
+        {
+            "routes_lib_name": "Faust Signal Routing Library"
+        },
+        {
+            "routes_lib_version": "1.2.0"
+        },
+        {
+            "signals_lib_name": "Faust Signal Routing Library"
+        },
+        {
+            "signals_lib_version": "1.5.0"
+        },
+        {
+            "version": "2.74.9"
+        }
+    ],
+    "ui": [
+        {
+            "type": "vgroup",
+            "label": "sfIter",
+            "items": [
+                {
+                    "type": "vgroup",
+                    "label": "sfIter",
+                    "items": [
+                        {
+                            "type": "checkbox",
+                            "label": "ON/OFF",
+                            "shortname": "OFF",
+                            "address": "/sfIter/sfIter/ON/OFF",
+                            "index": 262148
+                        }
+                    ]
+                },
+                {
+                    "type": "vgroup",
+                    "label": "sfIter parameter(s)",
+                    "items": [
+                        {
+                            "type": "hslider",
+                            "label": "Dry/Wet Mix",
+                            "shortname": "Wet_Mix",
+                            "address": "/sfIter/sfIter_parameter_s_/Dry/Wet_Mix",
+                            "index": 262812,
+                            "meta": [
+                                {
+                                    "1": ""
+                                },
+                                {
+                                    "acc": "1 0 -10 0 10"
+                                },
+                                {
+                                    "color": "255 255 0"
+                                },
+                                {
+                                    "hidden": "1"
+                                },
+                                {
+                                    "tooltip": "-1 = dry, 1 = wet"
+                                }
+                            ],
+                            "init": 5,
+                            "min": 0,
+                            "max": 20,
+                            "step": 0.1
+                        },
+                        {
+                            "type": "hslider",
+                            "label": "Low RT60",
+                            "shortname": "Low_RT60",
+                            "address": "/sfIter/sfIter_parameter_s_/Low_RT60",
+                            "index": 262916,
+                            "meta": [
+                                {
+                                    "2": ""
+                                },
+                                {
+                                    "acc": "1 0 -10 0 10"
+                                },
+                                {
+                                    "color": "255 255 0"
+                                },
+                                {
+                                    "hidden": "1"
+                                },
+                                {
+                                    "tooltip": "T60 = time (in seconds) to decay 60dB in low-frequency band"
+                                },
+                                {
+                                    "unit": "s"
+                                }
+                            ],
+                            "init": 6.5,
+                            "min": 1,
+                            "max": 10,
+                            "step": 0.1
+                        },
+                        {
+                            "type": "hslider",
+                            "label": "Mid RT60",
+                            "shortname": "Mid_RT60",
+                            "address": "/sfIter/sfIter_parameter_s_/Mid_RT60",
+                            "index": 262908,
+                            "meta": [
+                                {
+                                    "3": ""
+                                },
+                                {
+                                    "acc": "1 0 -10 0 10"
+                                },
+                                {
+                                    "color": "255 255 0"
+                                },
+                                {
+                                    "hidden": "1"
+                                },
+                                {
+                                    "tooltip": "T60 = time (in seconds) to decay 60dB in middle band"
+                                },
+                                {
+                                    "unit": "s"
+                                }
+                            ],
+                            "init": 6.5,
+                            "min": 1,
+                            "max": 10,
+                            "step": 0.1
+                        },
+                        {
+                            "type": "hslider",
+                            "label": "freq",
+                            "shortname": "freq",
+                            "address": "/sfIter/sfIter_parameter_s_/freq",
+                            "index": 262824,
+                            "meta": [
+                                {
+                                    "acc": "0 0 -10 0 10"
+                                },
+                                {
+                                    "color": "255 0 0"
+                                },
+                                {
+                                    "hidden": "1"
+                                },
+                                {
+                                    "osc": "/freq -1 1"
+                                }
+                            ],
+                            "init": 390,
+                            "min": 100,
+                            "max": 2000,
+                            "step": 1
+                        },
+                        {
+                            "type": "hslider",
+                            "label": "freqmod",
+                            "shortname": "freqmod",
+                            "address": "/sfIter/sfIter_parameter_s_/freqmod",
+                            "index": 262836,
+                            "meta": [
+                                {
+                                    "acc": "2 0 -10 0 10"
+                                },
+                                {
+                                    "color": "0 255 0"
+                                },
+                                {
+                                    "hidden": "1"
+                                },
+                                {
+                                    "osc": "/freqmod -1 1"
+                                }
+                            ],
+                            "init": 0.1,
+                            "min": 0.1,
+                            "max": 9.5,
+                            "step": 0.1
+                        },
+                        {
+                            "type": "hslider",
+                            "label": "high_cut",
+                            "shortname": "high_cut",
+                            "address": "/sfIter/sfIter_parameter_s_/high_cut",
+                            "index": 262180,
+                            "meta": [
+                                {
+                                    "hidden": "1"
+                                }
+                            ],
+                            "init": 0.5,
+                            "min": 0.01,
+                            "max": 10,
+                            "step": 0.01
+                        },
+                        {
+                            "type": "hslider",
+                            "label": "ratio_env",
+                            "shortname": "ratio_env",
+                            "address": "/sfIter/sfIter_parameter_s_/ratio_env",
+                            "index": 262260,
+                            "meta": [
+                                {
+                                    "acc": "1 0 -10 0 10"
+                                },
+                                {
+                                    "color": "255 255 0"
+                                },
+                                {
+                                    "hidden": "1"
+                                },
+                                {
+                                    "osc": "/ratio -1 1"
+                                }
+                            ],
+                            "init": 0.166,
+                            "min": 0,
+                            "max": 0.5,
+                            "step": 0.0001
+                        },
+                        {
+                            "type": "hslider",
+                            "label": "speed",
+                            "shortname": "speed",
+                            "address": "/sfIter/sfIter_parameter_s_/speed",
+                            "index": 262208,
+                            "meta": [
+                                {
+                                    "acc": "1 1 -10 0 10"
+                                },
+                                {
+                                    "color": "255 255 0"
+                                },
+                                {
+                                    "hidden": "1"
+                                },
+                                {
+                                    "osc": "/speed -1 1"
+                                }
+                            ],
+                            "init": 10,
+                            "min": 0.001,
+                            "max": 20,
+                            "step": 0.0001
+                        },
+                        {
+                            "type": "hslider",
+                            "label": "vol",
+                            "shortname": "vol",
+                            "address": "/sfIter/sfIter_parameter_s_/vol",
+                            "index": 262184,
+                            "meta": [
+                                {
+                                    "acc": "0 1 -10 0 10"
+                                },
+                                {
+                                    "color": "255 0 0"
+                                },
+                                {
+                                    "hidden": "1"
+                                },
+                                {
+                                    "osc": "/vol -1 1"
+                                }
+                            ],
+                            "init": 0.5,
+                            "min": 0,
+                            "max": 1,
+                            "step": 0.0001
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
