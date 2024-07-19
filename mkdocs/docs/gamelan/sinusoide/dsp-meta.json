@@ -1,0 +1,270 @@
+{
+    "name": "sinusoide",
+    "filename": "sinusoide",
+    "version": "2.74.8",
+    "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
+    "library_list": [
+        "/usr/share/faust/stdfaust.lib",
+        "/usr/share/faust/signals.lib",
+        "/usr/share/faust/oscillators.lib",
+        "/usr/share/faust/reverbs.lib",
+        "/usr/share/faust/delays.lib",
+        "/usr/share/faust/maths.lib",
+        "/usr/share/faust/platform.lib",
+        "/usr/share/faust/filters.lib",
+        "/usr/share/faust/basics.lib",
+        "/usr/share/faust/routes.lib"
+    ],
+    "include_pathnames": [
+        "/share/faust",
+        "/usr/local/share/faust",
+        "/usr/share/faust",
+        "."
+    ],
+    "size": 1106788,
+    "code": "cDeBAfQBHw==",
+    "inputs": 0,
+    "outputs": 1,
+    "meta": [
+        {
+            "author": "Developpement Grame - CNCM par Elodie Rabibisoa et Romain Constant."
+        },
+        {
+            "basics.lib/name": "Faust Basic Element Library"
+        },
+        {
+            "basics.lib/tabulateNd": "Copyright (C) 2023 Bart Brouns <bart@magnetophon.nl>"
+        },
+        {
+            "basics.lib/version": "1.18.0"
+        },
+        {
+            "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2"
+        },
+        {
+            "delays.lib/name": "Faust Delay Library"
+        },
+        {
+            "delays.lib/version": "1.1.0"
+        },
+        {
+            "filename": "sinusoide"
+        },
+        {
+            "filters.lib/allpass_comb:author": "Julius O. Smith III"
+        },
+        {
+            "filters.lib/allpass_comb:copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters.lib/allpass_comb:license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters.lib/lowpass0_highpass1": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters.lib/lowpass0_highpass1:author": "Julius O. Smith III"
+        },
+        {
+            "filters.lib/lowpass:author": "Julius O. Smith III"
+        },
+        {
+            "filters.lib/lowpass:copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters.lib/lowpass:license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters.lib/name": "Faust Filters Library"
+        },
+        {
+            "filters.lib/tf1:author": "Julius O. Smith III"
+        },
+        {
+            "filters.lib/tf1:copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters.lib/tf1:license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters.lib/tf1s:author": "Julius O. Smith III"
+        },
+        {
+            "filters.lib/tf1s:copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters.lib/tf1s:license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters.lib/version": "1.3.0"
+        },
+        {
+            "maths.lib/author": "GRAME"
+        },
+        {
+            "maths.lib/copyright": "GRAME"
+        },
+        {
+            "maths.lib/license": "LGPL with exception"
+        },
+        {
+            "maths.lib/name": "Faust Math Library"
+        },
+        {
+            "maths.lib/version": "2.8.0"
+        },
+        {
+            "name": "sinusoide"
+        },
+        {
+            "oscillators.lib/name": "Faust Oscillator Library"
+        },
+        {
+            "oscillators.lib/version": "1.5.1"
+        },
+        {
+            "platform.lib/name": "Generic Platform Library"
+        },
+        {
+            "platform.lib/version": "1.3.0"
+        },
+        {
+            "reverbs.lib/name": "Faust Reverb Library"
+        },
+        {
+            "reverbs.lib/version": "1.3.0"
+        },
+        {
+            "routes.lib/hadamard:author": "Remy Muller, revised by Romain Michon"
+        },
+        {
+            "routes.lib/name": "Faust Signal Routing Library"
+        },
+        {
+            "routes.lib/version": "1.2.0"
+        },
+        {
+            "signals.lib/name": "Faust Signal Routing Library"
+        },
+        {
+            "signals.lib/version": "1.5.0"
+        }
+    ],
+    "ui": [
+        {
+            "type": "vgroup",
+            "label": "sinusoide",
+            "items": [
+                {
+                    "type": "vslider",
+                    "label": "Radio",
+                    "shortname": "Radio",
+                    "address": "/sinusoide/Radio",
+                    "index": 262216,
+                    "meta": [
+                        {
+                            "acc": "0 0 -10 0 10"
+                        },
+                        {
+                            "hidden": "1"
+                        },
+                        {
+                            "unit": "Hz"
+                        }
+                    ],
+                    "init": 1,
+                    "min": 0,
+                    "max": 10,
+                    "step": 1
+                },
+                {
+                    "type": "vslider",
+                    "label": "Slide",
+                    "shortname": "Slide",
+                    "address": "/sinusoide/Slide",
+                    "index": 262204,
+                    "meta": [
+                        {
+                            "acc": "0 0 -10 0 10"
+                        },
+                        {
+                            "hidden": "1"
+                        },
+                        {
+                            "unit": "Hz"
+                        }
+                    ],
+                    "init": 1046.5,
+                    "min": 523.5,
+                    "max": 2093,
+                    "step": 0.001
+                },
+                {
+                    "type": "hslider",
+                    "label": "Volume",
+                    "shortname": "Volume",
+                    "address": "/sinusoide/Volume",
+                    "index": 262148,
+                    "meta": [
+                        {
+                            "acc": "1 0 -9 0 10"
+                        },
+                        {
+                            "hidden": "1"
+                        }
+                    ],
+                    "init": 0.35,
+                    "min": 0,
+                    "max": 0.7,
+                    "step": 0.001
+                },
+                {
+                    "type": "checkbox",
+                    "label": "SLIDE / SCALE",
+                    "shortname": "_SCALE",
+                    "address": "/sinusoide/SLIDE_/_SCALE",
+                    "index": 262200,
+                    "meta": [
+                        {
+                            "0": ""
+                        }
+                    ]
+                },
+                {
+                    "type": "vslider",
+                    "label": "Dry/Wet Mix",
+                    "shortname": "Wet_Mix",
+                    "address": "/sinusoide/Dry/Wet_Mix",
+                    "index": 262180,
+                    "meta": [
+                        {
+                            "1": ""
+                        },
+                        {
+                            "hidden": "1"
+                        },
+                        {
+                            "style": "knob"
+                        }
+                    ],
+                    "init": 1,
+                    "min": 0,
+                    "max": 1,
+                    "step": 0.01
+                },
+                {
+                    "type": "checkbox",
+                    "label": "ON / OFF",
+                    "shortname": "_OFF",
+                    "address": "/sinusoide/ON_/_OFF",
+                    "index": 262144,
+                    "meta": [
+                        {
+                            "1": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+site_name: Faust Progressive Web Applications
+site_description: A repository of Faust Progressive Web Applications.
+copyright: Copyright &copy; 2024 <a href="https://www.grame.fr">Grame-CNCM</a>
+
+nav:
+    - Home: index.md 
+    - GameLAN: gamelan/index.md
+    - Smartfaust: smartfaust/index.md
+   
+theme: 
+  name: mkdocs
+  custom_dir: 'theme'
+  navigation_depth: 4

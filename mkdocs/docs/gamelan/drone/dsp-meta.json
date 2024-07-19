@@ -1,0 +1,249 @@
+{
+    "name": "drone",
+    "filename": "drone",
+    "version": "2.74.8",
+    "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
+    "library_list": [
+        "/usr/share/faust/stdfaust.lib",
+        "/usr/share/faust/soundfiles.lib",
+        "/usr/share/faust/interpolators.lib",
+        "/usr/share/faust/signals.lib",
+        "/usr/share/faust/maths.lib",
+        "/usr/share/faust/platform.lib",
+        "/usr/share/faust/filters.lib"
+    ],
+    "include_pathnames": [
+        "/share/faust",
+        "/usr/local/share/faust",
+        "/usr/share/faust",
+        "."
+    ],
+    "size": 256,
+    "code": "iA8=",
+    "inputs": 0,
+    "outputs": 2,
+    "meta": [
+        {
+            "author": "Developpement Grame - CNCM par Elodie Rabibisoa et Romain Constant."
+        },
+        {
+            "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2"
+        },
+        {
+            "filename": "drone"
+        },
+        {
+            "filters.lib/lowpass0_highpass1": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters.lib/lowpass0_highpass1:author": "Julius O. Smith III"
+        },
+        {
+            "filters.lib/lowpass:author": "Julius O. Smith III"
+        },
+        {
+            "filters.lib/lowpass:copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters.lib/lowpass:license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters.lib/name": "Faust Filters Library"
+        },
+        {
+            "filters.lib/tf1:author": "Julius O. Smith III"
+        },
+        {
+            "filters.lib/tf1:copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters.lib/tf1:license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters.lib/tf1s:author": "Julius O. Smith III"
+        },
+        {
+            "filters.lib/tf1s:copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters.lib/tf1s:license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters.lib/version": "1.3.0"
+        },
+        {
+            "interpolators.lib/name": "Faust Interpolator Library"
+        },
+        {
+            "interpolators.lib/version": "1.3.1"
+        },
+        {
+            "maths.lib/author": "GRAME"
+        },
+        {
+            "maths.lib/copyright": "GRAME"
+        },
+        {
+            "maths.lib/license": "LGPL with exception"
+        },
+        {
+            "maths.lib/name": "Faust Math Library"
+        },
+        {
+            "maths.lib/version": "2.8.0"
+        },
+        {
+            "name": "drone"
+        },
+        {
+            "platform.lib/name": "Generic Platform Library"
+        },
+        {
+            "platform.lib/version": "1.3.0"
+        },
+        {
+            "signals.lib/name": "Faust Signal Routing Library"
+        },
+        {
+            "signals.lib/version": "1.5.0"
+        },
+        {
+            "soundfiles": "https://raw.githubusercontent.com/grame-cncm/GameLAN/master/drone"
+        },
+        {
+            "soundfiles.lib/name": "Faust Soundfile Library"
+        },
+        {
+            "soundfiles.lib/version": "1.7.0"
+        }
+    ],
+    "ui": [
+        {
+            "type": "vgroup",
+            "label": "drone",
+            "items": [
+                {
+                    "type": "soundfile",
+                    "label": "Drone_1",
+                    "url": "{-Alonepad_reverb_stereo_instru1.flac-;-Dronepad_test_stereo_instru1.flac-;-Rain_full_stereo_instru1.flac-;-Gouttes_eau_mono_instru1.flac-}",
+                    "address": "/drone/Drone_1",
+                    "index": 0
+                },
+                {
+                    "type": "soundfile",
+                    "label": "Drone_2",
+                    "url": "{-Drone_C_filter_stereo_instru2.flac-;-Pad_C_tremolo_stereo_instru2.flac-;-Pedale_C_filter_stereo_instru2.flac-;-String_freeze_stereo_instru2.flac-}",
+                    "address": "/drone/Drone_2",
+                    "index": 4
+                },
+                {
+                    "type": "hslider",
+                    "label": "Volume 0",
+                    "shortname": "Volume_0",
+                    "address": "/drone/Volume_0",
+                    "index": 44,
+                    "meta": [
+                        {
+                            "acc": "0 0 0 0 10"
+                        },
+                        {
+                            "hidden": "1"
+                        }
+                    ],
+                    "init": 0,
+                    "min": 0,
+                    "max": 1,
+                    "step": 0.001
+                },
+                {
+                    "type": "hslider",
+                    "label": "Volume 1",
+                    "shortname": "Volume_1",
+                    "address": "/drone/Volume_1",
+                    "index": 84,
+                    "meta": [
+                        {
+                            "acc": "0 1 -10 0 0"
+                        },
+                        {
+                            "hidden": "1"
+                        }
+                    ],
+                    "init": 0,
+                    "min": 0,
+                    "max": 1,
+                    "step": 0.001
+                },
+                {
+                    "type": "hslider",
+                    "label": "Volume 2",
+                    "shortname": "Volume_2",
+                    "address": "/drone/Volume_2",
+                    "index": 120,
+                    "meta": [
+                        {
+                            "acc": "1 0 0 0 10"
+                        },
+                        {
+                            "hidden": "1"
+                        }
+                    ],
+                    "init": 0,
+                    "min": 0,
+                    "max": 1,
+                    "step": 0.001
+                },
+                {
+                    "type": "hslider",
+                    "label": "Volume 3",
+                    "shortname": "Volume_3",
+                    "address": "/drone/Volume_3",
+                    "index": 156,
+                    "meta": [
+                        {
+                            "acc": "1 1 -10 0 0"
+                        },
+                        {
+                            "hidden": "1"
+                        }
+                    ],
+                    "init": 0,
+                    "min": 0,
+                    "max": 1,
+                    "step": 0.001
+                },
+                {
+                    "type": "checkbox",
+                    "label": "ON / OFF",
+                    "shortname": "_OFF",
+                    "address": "/drone/ON_/_OFF",
+                    "index": 8,
+                    "meta": [
+                        {
+                            "0": ""
+                        }
+                    ]
+                },
+                {
+                    "type": "hslider",
+                    "label": "Drones",
+                    "shortname": "Drones",
+                    "address": "/drone/Drones",
+                    "index": 12,
+                    "meta": [
+                        {
+                            "1": ""
+                        },
+                        {
+                            "style": "radio{-1-:0;-2-:1}"
+                        }
+                    ],
+                    "init": 0,
+                    "min": 0,
+                    "max": 1,
+                    "step": 1
+                }
+            ]
+        }
+    ]
+}

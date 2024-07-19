@@ -1,0 +1,499 @@
+{
+    "name": "sfTrumpet",
+    "filename": "sfTrumpet.dsp",
+    "version": "2.74.8",
+    "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
+    "include_pathnames": [
+        "/share/faust",
+        "/usr/local/share/faust",
+        "/usr/share/faust",
+        "."
+    ],
+    "size": 549524,
+    "code": "2ClgAfQBHw==",
+    "inputs": 0,
+    "outputs": 1,
+    "meta": [
+        {
+            "author": "Christophe Lebreton"
+        },
+        {
+            "basics_lib_name": "Faust Basic Element Library"
+        },
+        {
+            "basics_lib_tabulateNd": "Copyright (C) 2023 Bart Brouns <bart@magnetophon.nl>"
+        },
+        {
+            "basics_lib_version": "1.18.0"
+        },
+        {
+            "compile_options": "-single -scal -e ../sfTrumpet.dsp -o sfTrumpet.dsp"
+        },
+        {
+            "copyright": "SmartFaust - GRAME(c)2013-2018"
+        },
+        {
+            "delays_lib_name": "Faust Delay Library"
+        },
+        {
+            "delays_lib_version": "1.1.0"
+        },
+        {
+            "envelopes_lib_adsr_author": "Yann Orlarey and Andrey Bundin"
+        },
+        {
+            "envelopes_lib_author": "GRAME"
+        },
+        {
+            "envelopes_lib_copyright": "GRAME"
+        },
+        {
+            "envelopes_lib_license": "LGPL with exception"
+        },
+        {
+            "envelopes_lib_name": "Faust Envelope Library"
+        },
+        {
+            "envelopes_lib_version": "1.3.0"
+        },
+        {
+            "filename": "sfTrumpet.dsp"
+        },
+        {
+            "filters_lib_allpass_comb_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_allpass_comb_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_allpass_comb_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_allpassnn_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_allpassnn_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_allpassnn_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_dcblocker_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_dcblocker_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_dcblocker_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_fir_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_fir_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_fir_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_iir_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_iir_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_iir_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_lowpass0_highpass1": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_lowpass0_highpass1_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_lowpass_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_lowpass_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_lowpass_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_name": "Faust Filters Library"
+        },
+        {
+            "filters_lib_peak_eq_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_peak_eq_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_peak_eq_cq_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_peak_eq_cq_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_peak_eq_cq_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_peak_eq_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_pole_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_pole_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_pole_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_tf1_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_tf1_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_tf1_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_tf1s_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_tf1s_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_tf1s_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_tf2_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_tf2_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_tf2_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_tf2s_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_tf2s_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_tf2s_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_version": "1.3.0"
+        },
+        {
+            "filters_lib_zero_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_zero_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_zero_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "instrument_lib_author": "Romain Michon (rmichon@ccrma.stanford.edu)"
+        },
+        {
+            "instrument_lib_copyright": "Romain Michon"
+        },
+        {
+            "instrument_lib_licence": "STK-4.3"
+        },
+        {
+            "instrument_lib_name": "Faust-STK Tools Library"
+        },
+        {
+            "instrument_lib_version": "1.0"
+        },
+        {
+            "library_path0": "/Users/letz/Developpements/smartfaust/src/sfTrumpet/instrument.lib"
+        },
+        {
+            "library_path1": "/usr/local/share/faust/stdfaust.lib"
+        },
+        {
+            "library_path10": "/usr/local/share/faust/reverbs.lib"
+        },
+        {
+            "library_path11": "/usr/local/share/faust/routes.lib"
+        },
+        {
+            "library_path2": "/usr/local/share/faust/signals.lib"
+        },
+        {
+            "library_path3": "/usr/local/share/faust/envelopes.lib"
+        },
+        {
+            "library_path4": "/usr/local/share/faust/maths.lib"
+        },
+        {
+            "library_path5": "/usr/local/share/faust/platform.lib"
+        },
+        {
+            "library_path6": "/usr/local/share/faust/oscillators.lib"
+        },
+        {
+            "library_path7": "/usr/local/share/faust/basics.lib"
+        },
+        {
+            "library_path8": "/usr/local/share/faust/filters.lib"
+        },
+        {
+            "library_path9": "/usr/local/share/faust/delays.lib"
+        },
+        {
+            "license": "BSD & STK-4.3"
+        },
+        {
+            "maths_lib_author": "GRAME"
+        },
+        {
+            "maths_lib_copyright": "GRAME"
+        },
+        {
+            "maths_lib_license": "LGPL with exception"
+        },
+        {
+            "maths_lib_name": "Faust Math Library"
+        },
+        {
+            "maths_lib_version": "2.8.0"
+        },
+        {
+            "name": "sfTrumpet"
+        },
+        {
+            "oscillators_lib_name": "Faust Oscillator Library"
+        },
+        {
+            "oscillators_lib_version": "1.5.1"
+        },
+        {
+            "platform_lib_name": "Generic Platform Library"
+        },
+        {
+            "platform_lib_version": "1.3.0"
+        },
+        {
+            "reverbs_lib_name": "Faust Reverb Library"
+        },
+        {
+            "reverbs_lib_version": "1.3.0"
+        },
+        {
+            "routes_lib_hadamard_author": "Remy Muller, revised by Romain Michon"
+        },
+        {
+            "routes_lib_name": "Faust Signal Routing Library"
+        },
+        {
+            "routes_lib_version": "1.2.0"
+        },
+        {
+            "signals_lib_name": "Faust Signal Routing Library"
+        },
+        {
+            "signals_lib_version": "1.5.0"
+        },
+        {
+            "version": "2.74.9"
+        }
+    ],
+    "ui": [
+        {
+            "type": "vgroup",
+            "label": "sfTrumpet",
+            "items": [
+                {
+                    "type": "vgroup",
+                    "label": "sfTrumpet",
+                    "items": [
+                        {
+                            "type": "checkbox",
+                            "label": "ON/OFF",
+                            "shortname": "OFF",
+                            "address": "/sfTrumpet/sfTrumpet/ON/OFF",
+                            "index": 64
+                        }
+                    ]
+                },
+                {
+                    "type": "vgroup",
+                    "label": "sfTrumpet parameter(s)",
+                    "items": [
+                        {
+                            "type": "hslider",
+                            "label": "Dry/Wet Mix",
+                            "shortname": "Wet_Mix",
+                            "address": "/sfTrumpet/sfTrumpet_parameter_s_/Dry/Wet_Mix",
+                            "index": 98532,
+                            "meta": [
+                                {
+                                    "acc": "1 1 -10 0 10"
+                                },
+                                {
+                                    "color": "255 255 0"
+                                },
+                                {
+                                    "hidden": "1"
+                                }
+                            ],
+                            "init": 20,
+                            "min": 0,
+                            "max": 55,
+                            "step": 0.1
+                        },
+                        {
+                            "type": "hslider",
+                            "label": "HF Damping",
+                            "shortname": "HF_Damping",
+                            "address": "/sfTrumpet/sfTrumpet_parameter_s_/HF_Damping",
+                            "index": 98572,
+                            "meta": [
+                                {
+                                    "hidden": "1"
+                                }
+                            ],
+                            "init": 13340,
+                            "min": 1500,
+                            "max": 23520,
+                            "step": 1
+                        },
+                        {
+                            "type": "hslider",
+                            "label": "Lip_Tension",
+                            "shortname": "Lip_Tension",
+                            "address": "/sfTrumpet/sfTrumpet_parameter_s_/Lip_Tension",
+                            "index": 32952,
+                            "meta": [
+                                {
+                                    "2": ""
+                                },
+                                {
+                                    "acc": "0 0 -10 0 10"
+                                },
+                                {
+                                    "color": "255 0 0"
+                                },
+                                {
+                                    "hidden": "1"
+                                },
+                                {
+                                    "tooltip": "A value between 0 and 1"
+                                }
+                            ],
+                            "init": 0.688,
+                            "min": 0.626,
+                            "max": 0.751,
+                            "step": 0.001
+                        },
+                        {
+                            "type": "hslider",
+                            "label": "Low RT60",
+                            "shortname": "Low_RT60",
+                            "address": "/sfTrumpet/sfTrumpet_parameter_s_/Low_RT60",
+                            "index": 98632,
+                            "meta": [
+                                {
+                                    "acc": "1 1 -10 0 10"
+                                },
+                                {
+                                    "color": "255 255 0"
+                                },
+                                {
+                                    "hidden": "1"
+                                }
+                            ],
+                            "init": 7,
+                            "min": 1,
+                            "max": 16,
+                            "step": 0.1
+                        },
+                        {
+                            "type": "hslider",
+                            "label": "Mid RT60",
+                            "shortname": "Mid_RT60",
+                            "address": "/sfTrumpet/sfTrumpet_parameter_s_/Mid_RT60",
+                            "index": 98588,
+                            "meta": [
+                                {
+                                    "acc": "1 1 -10 0 10"
+                                },
+                                {
+                                    "color": "255 255 0"
+                                },
+                                {
+                                    "hidden": "1"
+                                }
+                            ],
+                            "init": 7,
+                            "min": 1,
+                            "max": 16,
+                            "step": 0.1
+                        },
+                        {
+                            "type": "hslider",
+                            "label": "Pressure",
+                            "shortname": "Pressure",
+                            "address": "/sfTrumpet/sfTrumpet_parameter_s_/Pressure",
+                            "index": 144,
+                            "meta": [
+                                {
+                                    "2": ""
+                                },
+                                {
+                                    "acc": "1 0 -10 0 10"
+                                },
+                                {
+                                    "color": "255 255 0"
+                                },
+                                {
+                                    "hidden": "1"
+                                },
+                                {
+                                    "tooltip": "A value between 0 and 1"
+                                }
+                            ],
+                            "init": 0.095,
+                            "min": 0.001,
+                            "max": 0.198,
+                            "step": 0.001
+                        },
+                        {
+                            "type": "hslider",
+                            "label": "freq",
+                            "shortname": "freq",
+                            "address": "/sfTrumpet/sfTrumpet_parameter_s_/freq",
+                            "index": 36,
+                            "meta": [
+                                {
+                                    "1": ""
+                                },
+                                {
+                                    "acc": "0 0 -10 0 10"
+                                },
+                                {
+                                    "color": "255 0 0"
+                                },
+                                {
+                                    "hidden": "1"
+                                }
+                            ],
+                            "init": 165,
+                            "min": 117,
+                            "max": 290,
+                            "step": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
