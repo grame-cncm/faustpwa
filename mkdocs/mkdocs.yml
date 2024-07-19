@@ -11,3 +11,5 @@ theme:
   name: mkdocs
   custom_dir: 'theme'
   navigation_depth: 4
+
+site_dir: ../docs
