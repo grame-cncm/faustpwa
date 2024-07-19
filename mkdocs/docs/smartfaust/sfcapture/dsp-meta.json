@@ -10,12 +10,12 @@
         "."
     ],
     "size": 5958504,
-    "code": "WMrF",
+    "code": "6MjF",
     "inputs": 1,
     "outputs": 1,
     "meta": [
         {
-            "author": "Christophe Lebreton"
+            "author": "Christophe Lebreton, Stéphane Letz"
         },
         {
             "basics_lib_name": "Faust Basic Element Library"
@@ -30,7 +30,7 @@
             "compile_options": "-single -scal -e ../sfCapture.dsp -o sfCapture.dsp"
         },
         {
-            "copyright": "SmartFaust - GRAME(c)2013-2018"
+            "copyright": "SmartFaust - GRAME(c)2013-2024"
         },
         {
             "delays_lib_name": "Faust Delay Library"
