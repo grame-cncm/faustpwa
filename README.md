@@ -5,12 +5,17 @@
 Clone this repository, then run:
 
 ```shell
-cd mkdocs
-mkdocs build
+make install
 ```
 
-The site can be tested locally:
+Build the site:
 
 ```shell
-mkdocs serve
+make build
+```
+
+Test the site locally:
+
+```shell
+make serve
 ```
