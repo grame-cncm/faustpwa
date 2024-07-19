@@ -1,16 +1,8 @@
 {
     "name": "atomicro",
-    "filename": "atomicro",
+    "filename": "atomicro.dsp",
     "version": "2.74.8",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
-    "library_list": [
-        "/usr/share/faust/stdfaust.lib",
-        "/usr/share/faust/maths.lib",
-        "/usr/share/faust/platform.lib",
-        "/usr/share/faust/delays.lib",
-        "/usr/share/faust/basics.lib",
-        "/usr/share/faust/signals.lib"
-    ],
     "include_pathnames": [
         "/share/faust",
         "/usr/local/share/faust",
@@ -18,7 +10,7 @@
         "."
     ],
     "size": 5041144,
-    "code": "kMXQ",
+    "code": "iGG+",
     "inputs": 1,
     "outputs": 1,
     "meta": [
@@ -26,55 +18,76 @@
             "author": "Developpement Grame - CNCM par Elodie Rabibisoa et Romain Constant."
         },
         {
-            "basics.lib/name": "Faust Basic Element Library"
+            "basics_lib_name": "Faust Basic Element Library"
         },
         {
-            "basics.lib/tabulateNd": "Copyright (C) 2023 Bart Brouns <bart@magnetophon.nl>"
+            "basics_lib_tabulateNd": "Copyright (C) 2023 Bart Brouns <bart@magnetophon.nl>"
         },
         {
-            "basics.lib/version": "1.18.0"
+            "basics_lib_version": "1.18.0"
         },
         {
-            "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2"
+            "compile_options": "-single -scal -e ../atomicro.dsp -o atomicro.dsp"
         },
         {
-            "delays.lib/name": "Faust Delay Library"
+            "delays_lib_name": "Faust Delay Library"
         },
         {
-            "delays.lib/version": "1.1.0"
+            "delays_lib_version": "1.1.0"
         },
         {
-            "filename": "atomicro"
+            "filename": "atomicro.dsp"
         },
         {
-            "maths.lib/author": "GRAME"
+            "library_path0": "/usr/local/share/faust/stdfaust.lib"
         },
         {
-            "maths.lib/copyright": "GRAME"
+            "library_path1": "/usr/local/share/faust/maths.lib"
         },
         {
-            "maths.lib/license": "LGPL with exception"
+            "library_path2": "/usr/local/share/faust/platform.lib"
         },
         {
-            "maths.lib/name": "Faust Math Library"
+            "library_path3": "/usr/local/share/faust/delays.lib"
         },
         {
-            "maths.lib/version": "2.8.0"
+            "library_path4": "/usr/local/share/faust/basics.lib"
+        },
+        {
+            "library_path5": "/usr/local/share/faust/signals.lib"
+        },
+        {
+            "maths_lib_author": "GRAME"
+        },
+        {
+            "maths_lib_copyright": "GRAME"
+        },
+        {
+            "maths_lib_license": "LGPL with exception"
+        },
+        {
+            "maths_lib_name": "Faust Math Library"
+        },
+        {
+            "maths_lib_version": "2.8.0"
         },
         {
             "name": "atomicro"
         },
         {
-            "platform.lib/name": "Generic Platform Library"
+            "platform_lib_name": "Generic Platform Library"
         },
         {
-            "platform.lib/version": "1.3.0"
+            "platform_lib_version": "1.3.0"
         },
         {
-            "signals.lib/name": "Faust Signal Routing Library"
+            "signals_lib_name": "Faust Signal Routing Library"
         },
         {
-            "signals.lib/version": "1.5.0"
+            "signals_lib_version": "1.5.0"
+        },
+        {
+            "version": "2.74.9"
         }
     ],
     "ui": [

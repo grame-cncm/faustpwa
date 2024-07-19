@@ -1,17 +1,8 @@
 {
     "name": "drone",
-    "filename": "drone",
+    "filename": "drone.dsp",
     "version": "2.74.8",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
-    "library_list": [
-        "/usr/share/faust/stdfaust.lib",
-        "/usr/share/faust/soundfiles.lib",
-        "/usr/share/faust/interpolators.lib",
-        "/usr/share/faust/signals.lib",
-        "/usr/share/faust/maths.lib",
-        "/usr/share/faust/platform.lib",
-        "/usr/share/faust/filters.lib"
-    ],
     "include_pathnames": [
         "/share/faust",
         "/usr/local/share/faust",
@@ -19,7 +10,7 @@
         "."
     ],
     "size": 256,
-    "code": "iA8=",
+    "code": "iOzS",
     "inputs": 0,
     "outputs": 2,
     "meta": [
@@ -27,94 +18,118 @@
             "author": "Developpement Grame - CNCM par Elodie Rabibisoa et Romain Constant."
         },
         {
-            "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2"
+            "compile_options": "-single -scal -e ../drone.dsp -o drone.dsp"
         },
         {
-            "filename": "drone"
+            "filename": "drone.dsp"
         },
         {
-            "filters.lib/lowpass0_highpass1": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+            "filters_lib_lowpass0_highpass1": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
         },
         {
-            "filters.lib/lowpass0_highpass1:author": "Julius O. Smith III"
+            "filters_lib_lowpass0_highpass1_author": "Julius O. Smith III"
         },
         {
-            "filters.lib/lowpass:author": "Julius O. Smith III"
+            "filters_lib_lowpass_author": "Julius O. Smith III"
         },
         {
-            "filters.lib/lowpass:copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+            "filters_lib_lowpass_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
         },
         {
-            "filters.lib/lowpass:license": "MIT-style STK-4.3 license"
+            "filters_lib_lowpass_license": "MIT-style STK-4.3 license"
         },
         {
-            "filters.lib/name": "Faust Filters Library"
+            "filters_lib_name": "Faust Filters Library"
         },
         {
-            "filters.lib/tf1:author": "Julius O. Smith III"
+            "filters_lib_tf1_author": "Julius O. Smith III"
         },
         {
-            "filters.lib/tf1:copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+            "filters_lib_tf1_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
         },
         {
-            "filters.lib/tf1:license": "MIT-style STK-4.3 license"
+            "filters_lib_tf1_license": "MIT-style STK-4.3 license"
         },
         {
-            "filters.lib/tf1s:author": "Julius O. Smith III"
+            "filters_lib_tf1s_author": "Julius O. Smith III"
         },
         {
-            "filters.lib/tf1s:copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+            "filters_lib_tf1s_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
         },
         {
-            "filters.lib/tf1s:license": "MIT-style STK-4.3 license"
+            "filters_lib_tf1s_license": "MIT-style STK-4.3 license"
         },
         {
-            "filters.lib/version": "1.3.0"
+            "filters_lib_version": "1.3.0"
         },
         {
-            "interpolators.lib/name": "Faust Interpolator Library"
+            "interpolators_lib_name": "Faust Interpolator Library"
         },
         {
-            "interpolators.lib/version": "1.3.1"
+            "interpolators_lib_version": "1.3.1"
         },
         {
-            "maths.lib/author": "GRAME"
+            "library_path0": "/usr/local/share/faust/stdfaust.lib"
         },
         {
-            "maths.lib/copyright": "GRAME"
+            "library_path1": "/usr/local/share/faust/soundfiles.lib"
         },
         {
-            "maths.lib/license": "LGPL with exception"
+            "library_path2": "/usr/local/share/faust/interpolators.lib"
         },
         {
-            "maths.lib/name": "Faust Math Library"
+            "library_path3": "/usr/local/share/faust/signals.lib"
         },
         {
-            "maths.lib/version": "2.8.0"
+            "library_path4": "/usr/local/share/faust/maths.lib"
+        },
+        {
+            "library_path5": "/usr/local/share/faust/platform.lib"
+        },
+        {
+            "library_path6": "/usr/local/share/faust/filters.lib"
+        },
+        {
+            "maths_lib_author": "GRAME"
+        },
+        {
+            "maths_lib_copyright": "GRAME"
+        },
+        {
+            "maths_lib_license": "LGPL with exception"
+        },
+        {
+            "maths_lib_name": "Faust Math Library"
+        },
+        {
+            "maths_lib_version": "2.8.0"
         },
         {
             "name": "drone"
         },
         {
-            "platform.lib/name": "Generic Platform Library"
+            "platform_lib_name": "Generic Platform Library"
         },
         {
-            "platform.lib/version": "1.3.0"
+            "platform_lib_version": "1.3.0"
         },
         {
-            "signals.lib/name": "Faust Signal Routing Library"
+            "signals_lib_name": "Faust Signal Routing Library"
         },
         {
-            "signals.lib/version": "1.5.0"
+            "signals_lib_version": "1.5.0"
         },
         {
             "soundfiles": "https://raw.githubusercontent.com/grame-cncm/GameLAN/master/drone"
         },
         {
-            "soundfiles.lib/name": "Faust Soundfile Library"
+            "soundfiles_lib_name": "Faust Soundfile Library"
         },
         {
-            "soundfiles.lib/version": "1.7.0"
+            "soundfiles_lib_version": "1.7.0"
+        },
+        {
+            "version": "2.74.9"
         }
     ],
     "ui": [
