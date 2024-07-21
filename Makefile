@@ -11,3 +11,10 @@ serve:
 	
 install:
 	pip install mkdocs
+	
+help:
+	@echo "Available targets:"
+	@echo "  build   - Build the MkDocs documentation"
+	@echo "  serve   - Serve the MkDocs documentation locally"
+	@echo "  install - Install MkDocs"
+	@echo "  help    - Display this help message"
