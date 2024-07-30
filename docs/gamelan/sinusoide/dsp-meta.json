@@ -1,7 +1,7 @@
 {
     "name": "sinusoide",
     "filename": "sinusoide.dsp",
-    "version": "2.74.8",
+    "version": "2.75.2",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 1106788,
-    "code": "2Mc0AfQBHw==",
+    "code": "gO00AaQSHw==",
     "inputs": 0,
     "outputs": 1,
     "meta": [
@@ -24,7 +24,7 @@
             "basics_lib_tabulateNd": "Copyright (C) 2023 Bart Brouns <bart@magnetophon.nl>"
         },
         {
-            "basics_lib_version": "1.18.0"
+            "basics_lib_version": "1.19.1"
         },
         {
             "compile_options": "-single -scal -e ../sinusoide.dsp -o sinusoide.dsp"
@@ -165,10 +165,10 @@
             "signals_lib_name": "Faust Signal Routing Library"
         },
         {
-            "signals_lib_version": "1.5.0"
+            "signals_lib_version": "1.6.0"
         },
         {
-            "version": "2.74.9"
+            "version": "2.75.2"
         }
     ],
     "ui": [
