@@ -6,6 +6,10 @@ The 2014 [Smartfaust](https://github.com/grame-cncm/smartfaust) concert applicat
 
 This smartphone application is a ​musical instrument​. It doesn’t collect any personal data of any kind. The microphone input is only used for real-time sound production and no audio recording is ever collected or transmitted.
     
+## Applications 
+
+Here is a list of all the applications that are ready to be installed on your computer, tablet, or smartphone:
+
 ### sfcapture
 <center>
 <div><a href="sfcapture"><img  width="25%" class="mx-auto d-block" src="sfcapture.png"></a>  </div>

@@ -8,6 +8,10 @@ The 7 applications in the "GameLAN" family ([atomicro](#atomicro), [attackey](#a
 
 This smartphone application is a ​musical instrument​. It doesn’t collect any personal data of any kind. The microphone input is only used for real-time sound production and no audio recording is ever collected or transmitted.
 
+## Applications 
+
+Here is a list of all the applications that are ready to be installed on your computer, tablet, or smartphone:
+
 ### atomicro
 <center>
 <div><a href="atomicro"><img  width="25%" class="mx-auto d-block" src="atomicro.png"></a>  </div>
