@@ -1,7 +1,7 @@
 {
     "name": "sfIter",
     "filename": "sfIter.dsp",
-    "version": "2.75.2",
+    "version": "2.75.3",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 779364,
-    "code": "uKUoAaQSHw==",
+    "code": "MLAoAWQjHw==",
     "inputs": 0,
     "outputs": 1,
     "meta": [
@@ -246,7 +246,7 @@
             "signals_lib_version": "1.6.0"
         },
         {
-            "version": "2.75.2"
+            "version": "2.75.7"
         }
     ],
     "ui": [
@@ -304,7 +304,7 @@
                             "label": "Low RT60",
                             "shortname": "Low_RT60",
                             "address": "/sfIter/sfIter_parameter_s_/Low_RT60",
-                            "index": 262916,
+                            "index": 262896,
                             "meta": [
                                 {
                                     "2": ""
@@ -335,7 +335,7 @@
                             "label": "Mid RT60",
                             "shortname": "Mid_RT60",
                             "address": "/sfIter/sfIter_parameter_s_/Mid_RT60",
-                            "index": 262908,
+                            "index": 262888,
                             "meta": [
                                 {
                                     "3": ""

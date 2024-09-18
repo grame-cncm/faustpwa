@@ -2090,11 +2090,19 @@ var FaustBaseWebAudioDsp = class _FaustBaseWebAudioDsp {
           if (midi) {
             const strMidi = midi.trim();
             if (strMidi === "pitchwheel") {
-              this.fPitchwheelLabel.push({ path: item.address, min: item.min, max: item.max });
-            } else {
-              const matched = strMidi.match(/^ctrl\s(\d+)/);
+              const matched = strMidi.match(/^pitchwheel\s(\d+)/);
               if (matched) {
-                this.fCtrlLabel[parseInt(matched[1])].push({ path: item.address, min: item.min, max: item.max });
+                this.fPitchwheelLabel.push({ path: item.address, chan: parseInt(matched[1]), min: item.min, max: item.max });
+              } else {
+                this.fPitchwheelLabel.push({ path: item.address, chan: 0, min: item.min, max: item.max });
+              }
+            } else {
+              const matched2 = strMidi.match(/^ctrl\s(\d+)\s(\d+)/);
+              const matched1 = strMidi.match(/^ctrl\s(\d+)/);
+              if (matched2) {
+                this.fCtrlLabel[parseInt(matched2[1])].push({ path: item.address, chan: parseInt(matched2[2]), min: item.min, max: item.max });
+              } else if (matched1) {
+                this.fCtrlLabel[parseInt(matched1[1])].push({ path: item.address, chan: 0, min: item.min, max: item.max });
               }
             }
           }
@@ -2362,10 +2370,12 @@ var FaustBaseWebAudioDsp = class _FaustBaseWebAudioDsp {
       this.fCachedEvents.push({ type: "ctrlChange", data: [channel, ctrl, value] });
     if (this.fCtrlLabel[ctrl].length) {
       this.fCtrlLabel[ctrl].forEach((ctrl2) => {
-        const { path } = ctrl2;
-        this.setParamValue(path, _FaustBaseWebAudioDsp.remap(value, 0, 127, ctrl2.min, ctrl2.max));
-        if (this.fOutputHandler)
-          this.fOutputHandler(path, this.getParamValue(path));
+        const { path, chan } = ctrl2;
+        if (chan === 0 || channel === chan - 1) {
+          this.setParamValue(path, _FaustBaseWebAudioDsp.remap(value, 0, 127, ctrl2.min, ctrl2.max));
+          if (this.fOutputHandler)
+            this.fOutputHandler(path, this.getParamValue(path));
+        }
       });
     }
   }
@@ -2373,9 +2383,12 @@ var FaustBaseWebAudioDsp = class _FaustBaseWebAudioDsp {
     if (this.fPlotHandler)
       this.fCachedEvents.push({ type: "pitchWheel", data: [channel, wheel] });
     this.fPitchwheelLabel.forEach((pw) => {
-      this.setParamValue(pw.path, _FaustBaseWebAudioDsp.remap(wheel, 0, 16383, pw.min, pw.max));
-      if (this.fOutputHandler)
-        this.fOutputHandler(pw.path, this.getParamValue(pw.path));
+      const { path, chan } = pw;
+      if (chan === 0 || channel === chan - 1) {
+        this.setParamValue(path, _FaustBaseWebAudioDsp.remap(wheel, 0, 16383, pw.min, pw.max));
+        if (this.fOutputHandler)
+          this.fOutputHandler(path, this.getParamValue(path));
+      }
     });
   }
   setParamValue(path, value) {

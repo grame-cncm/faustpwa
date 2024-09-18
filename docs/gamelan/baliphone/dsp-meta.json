@@ -1,7 +1,7 @@
 {
     "name": "baliphone",
     "filename": "baliphone.dsp",
-    "version": "2.75.2",
+    "version": "2.75.3",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 844728,
-    "code": "pBIf",
+    "code": "ZCMf",
     "inputs": 0,
     "outputs": 2,
     "meta": [
@@ -48,7 +48,7 @@
             "filters_lib_allpass_comb_license": "MIT-style STK-4.3 license"
         },
         {
-            "filters_lib_lowpass0_highpass1": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+            "filters_lib_lowpass0_highpass1": "MIT-style STK-4.3 license"
         },
         {
             "filters_lib_lowpass0_highpass1_author": "Julius O. Smith III"
@@ -162,7 +162,7 @@
             "soundfiles": "https://raw.githubusercontent.com/grame-cncm/GameLAN/master/baliphone"
         },
         {
-            "version": "2.75.2"
+            "version": "2.75.7"
         }
     ],
     "ui": [

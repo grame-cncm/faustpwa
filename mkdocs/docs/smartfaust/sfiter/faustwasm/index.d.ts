@@ -699,11 +699,13 @@ export declare class FaustBaseWebAudioDsp implements IFaustBaseWebAudioDsp {
 	protected fSampleSize: number;
 	protected fPitchwheelLabel: {
 		path: string;
+		chan: number;
 		min: number;
 		max: number;
 	}[];
 	protected fCtrlLabel: {
 		path: string;
+		chan: number;
 		min: number;
 		max: number;
 	}[][];

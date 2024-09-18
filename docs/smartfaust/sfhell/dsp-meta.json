@@ -1,7 +1,7 @@
 {
     "name": "sfHell",
     "filename": "sfHell.dsp",
-    "version": "2.75.2",
+    "version": "2.75.3",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 1053768,
-    "code": "oC8bAaQSHw==",
+    "code": "aDobAWQjHw==",
     "inputs": 0,
     "outputs": 1,
     "meta": [
@@ -261,7 +261,7 @@
             "signals_lib_version": "1.6.0"
         },
         {
-            "version": "2.75.2"
+            "version": "2.75.7"
         }
     ],
     "ui": [
@@ -319,7 +319,7 @@
                             "label": "LowRT60",
                             "shortname": "LowRT60",
                             "address": "/sfHell/sfHell_parameter_s_/LowRT60",
-                            "index": 602872,
+                            "index": 602852,
                             "meta": [
                                 {
                                     "2": ""
@@ -350,7 +350,7 @@
                             "label": "MidRT60",
                             "shortname": "MidRT60",
                             "address": "/sfHell/sfHell_parameter_s_/MidRT60",
-                            "index": 602864,
+                            "index": 602844,
                             "meta": [
                                 {
                                     "3": ""

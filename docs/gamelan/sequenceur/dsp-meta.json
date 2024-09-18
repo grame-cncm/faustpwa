@@ -1,7 +1,7 @@
 {
     "name": "sequenceur",
     "filename": "sequenceur.dsp",
-    "version": "2.75.2",
+    "version": "2.75.3",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 336,
-    "code": "8O3i",
+    "code": "EP3i",
     "inputs": 0,
     "outputs": 2,
     "meta": [
@@ -84,7 +84,7 @@
             "soundfiles": "https://raw.githubusercontent.com/grame-cncm/GameLAN/master/sequenceur"
         },
         {
-            "version": "2.75.2"
+            "version": "2.75.7"
         }
     ],
     "ui": [

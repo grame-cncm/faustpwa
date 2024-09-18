@@ -1,7 +1,7 @@
 {
     "name": "sinusoide",
     "filename": "sinusoide.dsp",
-    "version": "2.75.2",
+    "version": "2.75.3",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 1106788,
-    "code": "gO00AaQSHw==",
+    "code": "4Po0AWQjHw==",
     "inputs": 0,
     "outputs": 1,
     "meta": [
@@ -168,7 +168,7 @@
             "signals_lib_version": "1.6.0"
         },
         {
-            "version": "2.75.2"
+            "version": "2.75.7"
         }
     ],
     "ui": [
