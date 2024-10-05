@@ -1,7 +1,7 @@
 {
     "name": "sfTrashComb",
     "filename": "sfTrashComb.dsp",
-    "version": "2.75.3",
+    "version": "2.75.7",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 524384,
-    "code": "EC+z",
+    "code": "QB+z",
     "inputs": 1,
     "outputs": 1,
     "meta": [
@@ -102,7 +102,7 @@
             "signals_lib_version": "1.6.0"
         },
         {
-            "version": "2.75.7"
+            "version": "2.75.10"
         }
     ],
     "ui": [

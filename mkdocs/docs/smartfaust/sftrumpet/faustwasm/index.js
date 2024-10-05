@@ -783,8 +783,8 @@ function __generator(thisArg, body) {
     if (t[0] & 1)
       throw t[1];
     return t[1];
-  }, trys: [], ops: [] }, f, y, t, g;
-  return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() {
+  }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+  return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() {
     return this;
   }), g;
   function verb(n) {
@@ -3696,6 +3696,18 @@ var FaustAudioWorkletNode = class extends (globalThis.AudioWorkletNode || null) 
     });
     __privateAdd(this, _hasAccInput, false);
     __privateAdd(this, _hasGyrInput, false);
+    // Public API
+    // Accelerometer and gyroscope handlers
+    this.handleDeviceMotion = ({ accelerationIncludingGravity }) => {
+      const isAndroid = /Android/i.test(navigator.userAgent);
+      if (!accelerationIncludingGravity)
+        return;
+      const { x, y, z } = accelerationIncludingGravity;
+      this.propagateAcc({ x, y, z }, isAndroid);
+    };
+    this.handleDeviceOrientation = ({ alpha, beta, gamma }) => {
+      this.propagateGyr({ alpha, beta, gamma });
+    };
     this.fJSONDsp = JSONObj;
     this.fJSON = factory.json;
     this.fOutputHandler = null;
@@ -3727,54 +3739,57 @@ var FaustAudioWorkletNode = class extends (globalThis.AudioWorkletNode || null) 
       }
     };
   }
-  // Public API
   /** Setup accelerometer and gyroscope handlers */
-  async listenSensors() {
+  async startSensors() {
     if (this.hasAccInput) {
-      const isAndroid = /Android/i.test(navigator.userAgent);
-      const handleDeviceMotion = ({ accelerationIncludingGravity }) => {
-        if (!accelerationIncludingGravity)
-          return;
-        const { x, y, z } = accelerationIncludingGravity;
-        this.propagateAcc({ x, y, z }, isAndroid);
-      };
       if (window.DeviceMotionEvent) {
         if (typeof window.DeviceMotionEvent.requestPermission === "function") {
           try {
             const response = await window.DeviceMotionEvent.requestPermission();
-            if (response !== "granted")
+            if (response === "granted") {
+              window.addEventListener("devicemotion", this.handleDeviceMotion, true);
+            } else if (response === "denied") {
+              alert("You have denied access to motion and orientation data. To enable it, go to Settings > Safari > Motion & Orientation Access.");
               throw new Error("Unable to access the accelerometer.");
-            window.addEventListener("devicemotion", handleDeviceMotion, true);
+            }
           } catch (error) {
             console.error(error);
           }
         } else {
-          window.addEventListener("devicemotion", handleDeviceMotion, true);
+          window.addEventListener("devicemotion", this.handleDeviceMotion, true);
         }
       } else {
         console.log("Cannot set the accelerometer handler.");
       }
     }
     if (this.hasGyrInput) {
-      const handleDeviceOrientation = ({ alpha, beta, gamma }) => {
-        this.propagateGyr({ alpha, beta, gamma });
-      };
       if (window.DeviceMotionEvent) {
         if (typeof window.DeviceOrientationEvent.requestPermission === "function") {
           try {
             const response = await window.DeviceOrientationEvent.requestPermission();
-            if (response !== "granted")
+            if (response === "granted") {
+              window.addEventListener("deviceorientation", this.handleDeviceOrientation, true);
+            } else if (response === "denied") {
+              alert("You have denied access to motion and orientation data. To enable it, go to Settings > Safari > Motion & Orientation Access.");
               throw new Error("Unable to access the gyroscope.");
-            window.addEventListener("deviceorientation", handleDeviceOrientation, true);
+            }
           } catch (error) {
             console.error(error);
           }
         } else {
-          window.addEventListener("deviceorientation", handleDeviceOrientation, true);
+          window.addEventListener("deviceorientation", this.handleDeviceOrientation, true);
         }
       } else {
         console.log("Cannot set the gyroscope handler.");
       }
+    }
+  }
+  stopSensors() {
+    if (this.hasAccInput) {
+      window.removeEventListener("devicemotion", this.handleDeviceMotion, true);
+    }
+    if (this.hasGyrInput) {
+      window.removeEventListener("deviceorientation", this.handleDeviceOrientation, true);
     }
   }
   setOutputParamHandler(handler) {
@@ -3966,6 +3981,21 @@ var FaustPolyAudioWorkletNode = class extends FaustAudioWorkletNode {
 
 // src/FaustScriptProcessorNode.ts
 var FaustScriptProcessorNode = class extends (globalThis.ScriptProcessorNode || null) {
+  constructor() {
+    super(...arguments);
+    // Public API
+    // Accelerometer and gyroscope handlers
+    this.handleDeviceMotion = ({ accelerationIncludingGravity }) => {
+      const isAndroid = /Android/i.test(navigator.userAgent);
+      if (!accelerationIncludingGravity)
+        return;
+      const { x, y, z } = accelerationIncludingGravity;
+      this.propagateAcc({ x, y, z }, isAndroid);
+    };
+    this.handleDeviceOrientation = ({ alpha, beta, gamma }) => {
+      this.propagateGyr({ alpha, beta, gamma });
+    };
+  }
   init(instance) {
     this.fDSPCode = instance;
     this.fInputs = new Array(this.fDSPCode.getNumInputs());
@@ -3981,54 +4011,51 @@ var FaustScriptProcessorNode = class extends (globalThis.ScriptProcessorNode || 
     };
     this.start();
   }
-  // Public API
   /** Setup accelerometer and gyroscope handlers */
-  async listenSensors() {
+  async startSensors() {
     if (this.hasAccInput) {
-      const isAndroid = /Android/i.test(navigator.userAgent);
-      const handleDeviceMotion = ({ accelerationIncludingGravity }) => {
-        if (!accelerationIncludingGravity)
-          return;
-        const { x, y, z } = accelerationIncludingGravity;
-        this.propagateAcc({ x, y, z }, isAndroid);
-      };
       if (window.DeviceMotionEvent) {
         if (typeof window.DeviceMotionEvent.requestPermission === "function") {
           try {
             const response = await window.DeviceMotionEvent.requestPermission();
             if (response !== "granted")
               throw new Error("Unable to access the accelerometer.");
-            window.addEventListener("devicemotion", handleDeviceMotion, true);
+            window.addEventListener("devicemotion", this.handleDeviceMotion, true);
           } catch (error) {
             console.error(error);
           }
         } else {
-          window.addEventListener("devicemotion", handleDeviceMotion, true);
+          window.addEventListener("devicemotion", this.handleDeviceMotion, true);
         }
       } else {
         console.log("Cannot set the accelerometer handler.");
       }
     }
     if (this.hasGyrInput) {
-      const handleDeviceOrientation = ({ alpha, beta, gamma }) => {
-        this.propagateGyr({ alpha, beta, gamma });
-      };
       if (window.DeviceMotionEvent) {
         if (typeof window.DeviceOrientationEvent.requestPermission === "function") {
           try {
             const response = await window.DeviceOrientationEvent.requestPermission();
             if (response !== "granted")
               throw new Error("Unable to access the gyroscope.");
-            window.addEventListener("deviceorientation", handleDeviceOrientation, true);
+            window.addEventListener("deviceorientation", this.handleDeviceOrientation, true);
           } catch (error) {
             console.error(error);
           }
         } else {
-          window.addEventListener("deviceorientation", handleDeviceOrientation, true);
+          window.addEventListener("deviceorientation", this.handleDeviceOrientation, true);
         }
       } else {
         console.log("Cannot set the gyroscope handler.");
       }
+    }
+  }
+  stopSensors() {
+    if (this.hasAccInput) {
+      window.removeEventListener("devicemotion", this.handleDeviceMotion, true);
+    }
+    if (this.hasGyrInput) {
+      window.removeEventListener("deviceorientation", this.handleDeviceOrientation, true);
     }
   }
   compute(input, output) {
