@@ -110,7 +110,7 @@ export interface LooseFaustDspFactory {
 	/** a unique identifier */
 	shaKey?: string;
 	/** a map of transferable audio buffers for the `soundfile` function */
-	soundfiles: Record<string, (AudioData | null)>;
+	soundfiles: Record<string, (AudioData$1 | null)>;
 }
 export interface FaustDspMeta {
 	name: string;
@@ -219,7 +219,7 @@ export declare const FFTUtils: {
 	/** Convert from Faust processor's output to direct audio output, real/imag are readonly, fft length = fftSize = (real/imag length - 1) * 2 */
 	signalToNoFFT: (real: Float32Array | Float64Array, imag: Float32Array | Float64Array, fft: Float32Array | Float64Array) => any;
 };
-export interface AudioData {
+interface AudioData$1 {
 	sampleRate: number;
 	audioBuffer: Float32Array[];
 }
@@ -476,9 +476,9 @@ export declare class Soundfile {
 	constructor(allocator: WasmAllocator, sampleSize: number, curChan: number, length: number, maxChan: number, totalParts: number);
 	private allocBuffers;
 	shareBuffers(curChan: number, maxChan: number): void;
-	copyToOut(part: number, maxChannels: number, offset: number, audioData: AudioData): void;
-	copyToOutReal32(maxChannels: number, offset: number, audioData: AudioData): void;
-	copyToOutReal64(maxChannels: number, offset: number, audioData: AudioData): void;
+	copyToOut(part: number, maxChannels: number, offset: number, audioData: AudioData$1): void;
+	copyToOutReal32(maxChannels: number, offset: number, audioData: AudioData$1): void;
+	copyToOutReal64(maxChannels: number, offset: number, audioData: AudioData$1): void;
 	emptyFile(part: number, offset: number): number;
 	displayMemory(where?: string, mem?: boolean): void;
 	getPtr(): number;
@@ -621,11 +621,11 @@ export interface IFaustBaseWebAudioDsp {
 	 */
 	getJSON(): string;
 	/**
-	 * Start the DSP.
+	 * Start the DSP audio processing.
 	 */
 	start(): void;
 	/**
-	 * Stop the DSP.
+	 * Stop the DSP audio processing.
 	 */
 	stop(): void;
 	/**
@@ -966,7 +966,7 @@ export declare class LibFaust implements ILibFaust {
 	toString(): string;
 }
 export declare const ab2str: (buf: Uint8Array) => any;
-export declare const str2ab: (str: string) => Uint8Array;
+export declare const str2ab: (str: string) => Uint8Array<ArrayBuffer>;
 export interface IFaustCompiler {
 	/**
 	 * Gives the Faust compiler version.
@@ -1080,11 +1080,11 @@ export declare class FaustCompiler implements IFaustCompiler {
 	deleteAllDSPFactories(): void;
 	fs(): typeof FS;
 	getAsyncInternalMixerModule(isDouble?: boolean): Promise<{
-		mixerBuffer: Uint8Array;
+		mixerBuffer: Uint8Array<ArrayBufferLike>;
 		mixerModule: WebAssembly.Module;
 	}>;
 	getSyncInternalMixerModule(isDouble?: boolean): {
-		mixerBuffer: Uint8Array;
+		mixerBuffer: Uint8Array<ArrayBufferLike>;
 		mixerModule: WebAssembly.Module;
 	};
 }
@@ -1355,9 +1355,9 @@ export declare class FaustScriptProcessorNode<Poly extends boolean = false> exte
 	protected fDSPCode: Poly extends true ? FaustPolyWebAudioDsp : FaustMonoWebAudioDsp;
 	protected fInputs: Float32Array[];
 	protected fOutputs: Float32Array[];
+	protected handleDeviceMotion: any;
+	protected handleDeviceOrientation: any;
 	init(instance: Poly extends true ? FaustPolyWebAudioDsp : FaustMonoWebAudioDsp): void;
-	private handleDeviceMotion;
-	private handleDeviceOrientation;
 	/** Setup accelerometer and gyroscope handlers */
 	startSensors(): Promise<void>;
 	stopSensors(): void;
@@ -1402,7 +1402,7 @@ export interface GeneratorSupportingSoundfiles {
 	 *
 	 * @param soundfileMap a map of id - `AudioData` as an object where `AudioData` contains channel data as `audioBuffer: Float32Array[]` and `sampleRate: number`
 	 */
-	addSoundfiles(soundfileMap: Record<string, AudioData>): void;
+	addSoundfiles(soundfileMap: Record<string, AudioData$1>): void;
 	/**
 	 * Get a list of soundfiles needed, call after `compile()`
 	 */
@@ -1545,7 +1545,7 @@ export declare class FaustMonoDspGenerator implements IFaustMonoDspGenerator {
 	factory: FaustDspFactory | null;
 	constructor();
 	compile(compiler: IFaustCompiler, name: string, code: string, args: string): Promise<this | null>;
-	addSoundfiles(soundfileMap: Record<string, AudioData>): void;
+	addSoundfiles(soundfileMap: Record<string, AudioData$1>): void;
 	getSoundfileList(): string[];
 	createNode<SP extends boolean = false>(context: BaseAudioContext, name?: string, factory?: LooseFaustDspFactory, sp?: SP, bufferSize?: number, processorName?: string, processorOptions?: Record<string, any>): Promise<SP extends true ? FaustMonoScriptProcessorNode | null : FaustMonoAudioWorkletNode | null>;
 	createFFTNode(context: BaseAudioContext, fftUtils: typeof FFTUtils, name?: string, factory?: LooseFaustDspFactory, fftOptions?: Partial<FaustFFTOptionsData>, processorName?: string, processorOptions?: Record<string, any>): Promise<FaustMonoAudioWorkletNode | null>;
@@ -1568,7 +1568,7 @@ export declare class FaustPolyDspGenerator implements IFaustPolyDspGenerator {
 	mixerModule: WebAssembly.Module;
 	constructor();
 	compile(compiler: IFaustCompiler, name: string, dspCodeAux: string, args: string, effectCodeAux?: string): Promise<this | null>;
-	addSoundfiles(soundfileMap: Record<string, AudioData>): void;
+	addSoundfiles(soundfileMap: Record<string, AudioData$1>): void;
 	getSoundfileList(): string[];
 	createNode<SP extends boolean = false>(context: BaseAudioContext, voices: number, name?: string, voiceFactory?: LooseFaustDspFactory, mixerModule?: WebAssembly.Module, effectFactory?: LooseFaustDspFactory | null, sp?: SP, bufferSize?: number, processorName?: string, processorOptions?: {}): Promise<SP extends true ? FaustPolyScriptProcessorNode | null : FaustPolyAudioWorkletNode | null>;
 	createAudioWorkletProcessor(name?: string, voiceFactory?: LooseFaustDspFactory, effectFactory?: LooseFaustDspFactory | null, processorName?: string): Promise<{
@@ -1581,5 +1581,9 @@ export declare class FaustPolyDspGenerator implements IFaustPolyDspGenerator {
 	getJSON(): string;
 	getUI(): FaustUIDescriptor;
 }
+
+export {
+	AudioData$1 as AudioData,
+};
 
 export {};

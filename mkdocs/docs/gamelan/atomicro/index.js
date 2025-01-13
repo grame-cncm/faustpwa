@@ -33,22 +33,13 @@ audioContext.suspend();
 
     const { createFaustNode } = await import("./create-node.js");
     // To test the ScriptProcessorNode mode
-    // const { faustNode, dspMeta: { name } } = await createFaustNode(audioContext, "osc", FAUST_DSP_VOICES, true);
+    //const { faustNode, dspMeta: { name } } = await createFaustNode(audioContext, "osc", FAUST_DSP_VOICES, true, 512);
     const { faustNode, dspMeta: { name } } = await createFaustNode(audioContext, "osc", FAUST_DSP_VOICES);
     if (!faustNode) throw new Error("Faust DSP not compiled");
 
     // Create the Faust UI
     const { createFaustUI } = await import("./create-node.js");
     await createFaustUI($divFaustUI, faustNode);
-
-    // Connect the Faust node to the audio output
-    faustNode.connect(audioContext.destination);
-
-    // Connect the Faust node to the audio input
-    if (faustNode.numberOfInputs > 0) {
-        const { connectToAudioInput } = await import("./create-node.js");
-        await connectToAudioInput(audioContext, null, faustNode, null);
-    }
 
     // Function to start MIDI
     function startMIDI() {
@@ -109,6 +100,15 @@ audioContext.suspend();
         if (!midiHandlersBound && FAUST_DSP_VOICES > 0) {
             startMIDI();
             midiHandlersBound = true;
+        }
+
+        // Connect the Faust node to the audio output
+        faustNode.connect(audioContext.destination);
+
+        // Connect the Faust node to the audio input
+        if (faustNode.numberOfInputs > 0) {
+            const { connectToAudioInput } = await import("./create-node.js");
+            await connectToAudioInput(audioContext, null, faustNode, null);
         }
     }
 

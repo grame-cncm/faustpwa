@@ -1,7 +1,7 @@
 {
     "name": "sfTrumpet",
     "filename": "sfTrumpet.dsp",
-    "version": "2.75.7",
+    "version": "2.78.0",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 549524,
-    "code": "WEhgAZQTHw==",
+    "code": "KGFgAaQpHw==",
     "inputs": 0,
     "outputs": 1,
     "meta": [
@@ -24,7 +24,7 @@
             "basics_lib_tabulateNd": "Copyright (C) 2023 Bart Brouns <bart@magnetophon.nl>"
         },
         {
-            "basics_lib_version": "1.19.1"
+            "basics_lib_version": "1.21.0"
         },
         {
             "compile_options": "-single -scal -e ../sfTrumpet.dsp -o sfTrumpet.dsp"
@@ -186,7 +186,7 @@
             "filters_lib_tf2s_license": "MIT-style STK-4.3 license"
         },
         {
-            "filters_lib_version": "1.3.0"
+            "filters_lib_version": "1.6.0"
         },
         {
             "filters_lib_zero_author": "Julius O. Smith III"
@@ -264,7 +264,7 @@
             "maths_lib_name": "Faust Math Library"
         },
         {
-            "maths_lib_version": "2.8.0"
+            "maths_lib_version": "2.8.1"
         },
         {
             "name": "sfTrumpet"
@@ -285,7 +285,7 @@
             "reverbs_lib_name": "Faust Reverb Library"
         },
         {
-            "reverbs_lib_version": "1.3.0"
+            "reverbs_lib_version": "1.3.2"
         },
         {
             "routes_lib_hadamard_author": "Remy Muller, revised by Romain Michon"
@@ -303,7 +303,7 @@
             "signals_lib_version": "1.6.0"
         },
         {
-            "version": "2.75.10"
+            "version": "2.78.1"
         }
     ],
     "ui": [
@@ -318,8 +318,9 @@
                         {
                             "type": "checkbox",
                             "label": "ON/OFF",
-                            "shortname": "OFF",
-                            "address": "/sfTrumpet/sfTrumpet/ON/OFF",
+                            "varname": "fCheckbox0",
+                            "shortname": "ON_OFF",
+                            "address": "/sfTrumpet/sfTrumpet/ON_OFF",
                             "index": 64
                         }
                     ]
@@ -331,8 +332,9 @@
                         {
                             "type": "hslider",
                             "label": "Dry/Wet Mix",
-                            "shortname": "Wet_Mix",
-                            "address": "/sfTrumpet/sfTrumpet_parameter_s_/Dry/Wet_Mix",
+                            "varname": "fHslider3",
+                            "shortname": "Dry_Wet_Mix",
+                            "address": "/sfTrumpet/sfTrumpet_parameter_s_/Dry_Wet_Mix",
                             "index": 98532,
                             "meta": [
                                 {
@@ -353,6 +355,7 @@
                         {
                             "type": "hslider",
                             "label": "HF Damping",
+                            "varname": "fHslider4",
                             "shortname": "HF_Damping",
                             "address": "/sfTrumpet/sfTrumpet_parameter_s_/HF_Damping",
                             "index": 98552,
@@ -369,6 +372,7 @@
                         {
                             "type": "hslider",
                             "label": "Lip_Tension",
+                            "varname": "fHslider2",
                             "shortname": "Lip_Tension",
                             "address": "/sfTrumpet/sfTrumpet_parameter_s_/Lip_Tension",
                             "index": 32952,
@@ -397,6 +401,7 @@
                         {
                             "type": "hslider",
                             "label": "Low RT60",
+                            "varname": "fHslider6",
                             "shortname": "Low_RT60",
                             "address": "/sfTrumpet/sfTrumpet_parameter_s_/Low_RT60",
                             "index": 98612,
@@ -419,6 +424,7 @@
                         {
                             "type": "hslider",
                             "label": "Mid RT60",
+                            "varname": "fHslider5",
                             "shortname": "Mid_RT60",
                             "address": "/sfTrumpet/sfTrumpet_parameter_s_/Mid_RT60",
                             "index": 98568,
@@ -441,6 +447,7 @@
                         {
                             "type": "hslider",
                             "label": "Pressure",
+                            "varname": "fHslider1",
                             "shortname": "Pressure",
                             "address": "/sfTrumpet/sfTrumpet_parameter_s_/Pressure",
                             "index": 144,
@@ -469,6 +476,7 @@
                         {
                             "type": "hslider",
                             "label": "freq",
+                            "varname": "fHslider0",
                             "shortname": "freq",
                             "address": "/sfTrumpet/sfTrumpet_parameter_s_/freq",
                             "index": 36,

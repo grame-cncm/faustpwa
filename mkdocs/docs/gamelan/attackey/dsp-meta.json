@@ -1,7 +1,7 @@
 {
     "name": "attackey",
     "filename": "attackey.dsp",
-    "version": "2.75.7",
+    "version": "2.78.0",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 844636,
-    "code": "MPs0AZQTHw==",
+    "code": "WEE1AaQpHw==",
     "inputs": 0,
     "outputs": 2,
     "meta": [
@@ -24,7 +24,7 @@
             "basics_lib_tabulateNd": "Copyright (C) 2023 Bart Brouns <bart@magnetophon.nl>"
         },
         {
-            "basics_lib_version": "1.19.1"
+            "basics_lib_version": "1.21.0"
         },
         {
             "compile_options": "-single -scal -e ../attackey.dsp -o attackey.dsp"
@@ -66,7 +66,7 @@
             "filters_lib_allpass_comb_license": "MIT-style STK-4.3 license"
         },
         {
-            "filters_lib_lowpass0_highpass1": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+            "filters_lib_lowpass0_highpass1": "MIT-style STK-4.3 license"
         },
         {
             "filters_lib_lowpass0_highpass1_author": "Julius O. Smith III"
@@ -102,7 +102,7 @@
             "filters_lib_tf1s_license": "MIT-style STK-4.3 license"
         },
         {
-            "filters_lib_version": "1.3.0"
+            "filters_lib_version": "1.6.0"
         },
         {
             "library_path0": "/usr/local/share/faust/stdfaust.lib"
@@ -147,7 +147,7 @@
             "maths_lib_name": "Faust Math Library"
         },
         {
-            "maths_lib_version": "2.8.0"
+            "maths_lib_version": "2.8.1"
         },
         {
             "name": "attackey"
@@ -165,7 +165,7 @@
             "reverbs_lib_name": "Faust Reverb Library"
         },
         {
-            "reverbs_lib_version": "1.3.0"
+            "reverbs_lib_version": "1.3.2"
         },
         {
             "routes_lib_hadamard_author": "Remy Muller, revised by Romain Michon"
@@ -186,7 +186,7 @@
             "soundfiles": "https://raw.githubusercontent.com/grame-cncm/GameLAN/master/attacKey"
         },
         {
-            "version": "2.75.10"
+            "version": "2.78.1"
         }
     ],
     "ui": [
@@ -202,6 +202,7 @@
                 {
                     "type": "hslider",
                     "label": "Instruments",
+                    "varname": "fHslider2",
                     "shortname": "Instruments",
                     "address": "/Attackey/Instruments",
                     "index": 131196,
@@ -218,6 +219,7 @@
                 {
                     "type": "soundfile",
                     "label": "Instrus",
+                    "varname": "fSoundfile0",
                     "url": "{-Piano_F.flac-;-Ether_F.flac-;-Bell_F.flac-;-Saw_F.flac-;-Vibraphone_F.flac-}",
                     "address": "/Attackey/Instrus",
                     "index": 0
@@ -225,6 +227,7 @@
                 {
                     "type": "hslider",
                     "label": "Volume",
+                    "varname": "fHslider1",
                     "shortname": "Volume",
                     "address": "/Attackey/Volume",
                     "index": 131180,
@@ -244,6 +247,7 @@
                 {
                     "type": "hslider",
                     "label": "freq",
+                    "varname": "fHslider3",
                     "shortname": "freq",
                     "address": "/Attackey/freq",
                     "index": 131204,
@@ -255,6 +259,7 @@
                 {
                     "type": "hslider",
                     "label": "gain",
+                    "varname": "fHslider0",
                     "shortname": "gain",
                     "address": "/Attackey/gain",
                     "index": 131172,
@@ -266,6 +271,7 @@
                 {
                     "type": "button",
                     "label": "gate",
+                    "varname": "fButton0",
                     "shortname": "gate",
                     "address": "/Attackey/gate",
                     "index": 131208

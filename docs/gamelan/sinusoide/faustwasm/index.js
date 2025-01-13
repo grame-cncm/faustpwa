@@ -3983,8 +3983,13 @@ var FaustPolyAudioWorkletNode = class extends FaustAudioWorkletNode {
 var FaustScriptProcessorNode = class extends (globalThis.ScriptProcessorNode || null) {
   constructor() {
     super(...arguments);
-    // Public API
-    // Accelerometer and gyroscope handlers
+    this.handleDeviceMotion = void 0;
+    this.handleDeviceOrientation = void 0;
+  }
+  init(instance) {
+    this.fDSPCode = instance;
+    this.fInputs = new Array(this.fDSPCode.getNumInputs());
+    this.fOutputs = new Array(this.fDSPCode.getNumOutputs());
     this.handleDeviceMotion = ({ accelerationIncludingGravity }) => {
       const isAndroid = /Android/i.test(navigator.userAgent);
       if (!accelerationIncludingGravity)
@@ -3995,11 +4000,6 @@ var FaustScriptProcessorNode = class extends (globalThis.ScriptProcessorNode || 
     this.handleDeviceOrientation = ({ alpha, beta, gamma }) => {
       this.propagateGyr({ alpha, beta, gamma });
     };
-  }
-  init(instance) {
-    this.fDSPCode = instance;
-    this.fInputs = new Array(this.fDSPCode.getNumInputs());
-    this.fOutputs = new Array(this.fDSPCode.getNumOutputs());
     this.onaudioprocess = (e) => {
       for (let chan = 0; chan < this.fDSPCode.getNumInputs(); chan++) {
         this.fInputs[chan] = e.inputBuffer.getChannelData(chan);
@@ -4011,6 +4011,7 @@ var FaustScriptProcessorNode = class extends (globalThis.ScriptProcessorNode || 
     };
     this.start();
   }
+  // Public API
   /** Setup accelerometer and gyroscope handlers */
   async startSensors() {
     if (this.hasAccInput) {
@@ -4018,9 +4019,12 @@ var FaustScriptProcessorNode = class extends (globalThis.ScriptProcessorNode || 
         if (typeof window.DeviceMotionEvent.requestPermission === "function") {
           try {
             const response = await window.DeviceMotionEvent.requestPermission();
-            if (response !== "granted")
+            if (response === "granted") {
+              window.addEventListener("devicemotion", this.handleDeviceMotion, true);
+            } else if (response === "denied") {
+              alert("You have denied access to motion and orientation data. To enable it, go to Settings > Safari > Motion & Orientation Access.");
               throw new Error("Unable to access the accelerometer.");
-            window.addEventListener("devicemotion", this.handleDeviceMotion, true);
+            }
           } catch (error) {
             console.error(error);
           }
@@ -4036,9 +4040,12 @@ var FaustScriptProcessorNode = class extends (globalThis.ScriptProcessorNode || 
         if (typeof window.DeviceOrientationEvent.requestPermission === "function") {
           try {
             const response = await window.DeviceOrientationEvent.requestPermission();
-            if (response !== "granted")
+            if (response === "granted") {
+              window.addEventListener("deviceorientation", this.handleDeviceOrientation, true);
+            } else if (response === "denied") {
+              alert("You have denied access to motion and orientation data. To enable it, go to Settings > Safari > Motion & Orientation Access.");
               throw new Error("Unable to access the gyroscope.");
-            window.addEventListener("deviceorientation", this.handleDeviceOrientation, true);
+            }
           } catch (error) {
             console.error(error);
           }

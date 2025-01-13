@@ -1,7 +1,7 @@
 {
     "name": "atomicro",
     "filename": "atomicro.dsp",
-    "version": "2.75.7",
+    "version": "2.78.0",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 5041144,
-    "code": "8Ia+",
+    "code": "SJ6+",
     "inputs": 1,
     "outputs": 1,
     "meta": [
@@ -24,7 +24,7 @@
             "basics_lib_tabulateNd": "Copyright (C) 2023 Bart Brouns <bart@magnetophon.nl>"
         },
         {
-            "basics_lib_version": "1.19.1"
+            "basics_lib_version": "1.21.0"
         },
         {
             "compile_options": "-single -scal -e ../atomicro.dsp -o atomicro.dsp"
@@ -69,7 +69,7 @@
             "maths_lib_name": "Faust Math Library"
         },
         {
-            "maths_lib_version": "2.8.0"
+            "maths_lib_version": "2.8.1"
         },
         {
             "name": "atomicro"
@@ -87,7 +87,7 @@
             "signals_lib_version": "1.6.0"
         },
         {
-            "version": "2.75.10"
+            "version": "2.78.1"
         }
     ],
     "ui": [
@@ -98,6 +98,7 @@
                 {
                     "type": "hslider",
                     "label": "Grain size",
+                    "varname": "fHslider0",
                     "shortname": "Grain_size",
                     "address": "/atomicro/Grain_size",
                     "index": 846768,
@@ -117,6 +118,7 @@
                 {
                     "type": "hslider",
                     "label": "Grain start",
+                    "varname": "fHslider1",
                     "shortname": "Grain_start",
                     "address": "/atomicro/Grain_start",
                     "index": 846772,
@@ -145,6 +147,7 @@
                         {
                             "type": "checkbox",
                             "label": "Play",
+                            "varname": "fCheckbox4",
                             "shortname": "Play",
                             "address": "/atomicro/0x00/Play",
                             "index": 846776
@@ -152,6 +155,7 @@
                         {
                             "type": "checkbox",
                             "label": "Record",
+                            "varname": "fCheckbox1",
                             "shortname": "Record",
                             "address": "/atomicro/0x00/Record",
                             "index": 846728
@@ -170,6 +174,7 @@
                         {
                             "type": "checkbox",
                             "label": "Granulation",
+                            "varname": "fCheckbox3",
                             "shortname": "Granulation",
                             "address": "/atomicro/0x00/Granulation",
                             "index": 846764
@@ -177,6 +182,7 @@
                         {
                             "type": "checkbox",
                             "label": "Reverse",
+                            "varname": "fCheckbox2",
                             "shortname": "Reverse",
                             "address": "/atomicro/0x00/Reverse",
                             "index": 846760
@@ -195,6 +201,7 @@
                         {
                             "type": "checkbox",
                             "label": "Delay",
+                            "varname": "fCheckbox0",
                             "shortname": "Delay",
                             "address": "/atomicro/0x00/Delay",
                             "index": 0

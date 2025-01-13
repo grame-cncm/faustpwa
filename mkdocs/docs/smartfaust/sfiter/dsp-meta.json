@@ -1,7 +1,7 @@
 {
     "name": "sfIter",
     "filename": "sfIter.dsp",
-    "version": "2.75.7",
+    "version": "2.78.0",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 779364,
-    "code": "YKAoAZQTHw==",
+    "code": "YA0rAaQpHw==",
     "inputs": 0,
     "outputs": 1,
     "meta": [
@@ -30,7 +30,7 @@
             "basics_lib_tabulateNd": "Copyright (C) 2023 Bart Brouns <bart@magnetophon.nl>"
         },
         {
-            "basics_lib_version": "1.19.1"
+            "basics_lib_version": "1.21.0"
         },
         {
             "compile_options": "-single -scal -e ../sfIter.dsp -o sfIter.dsp"
@@ -147,7 +147,7 @@
             "filters_lib_tf2s_license": "MIT-style STK-4.3 license"
         },
         {
-            "filters_lib_version": "1.3.0"
+            "filters_lib_version": "1.6.0"
         },
         {
             "library_path0": "/usr/local/share/faust/stdfaust.lib"
@@ -201,7 +201,7 @@
             "maths_lib_name": "Faust Math Library"
         },
         {
-            "maths_lib_version": "2.8.0"
+            "maths_lib_version": "2.8.1"
         },
         {
             "name": "sfIter"
@@ -228,7 +228,7 @@
             "reverbs_lib_name": "Faust Reverb Library"
         },
         {
-            "reverbs_lib_version": "1.3.0"
+            "reverbs_lib_version": "1.3.2"
         },
         {
             "routes_lib_hadamard_author": "Remy Muller, revised by Romain Michon"
@@ -246,7 +246,7 @@
             "signals_lib_version": "1.6.0"
         },
         {
-            "version": "2.75.10"
+            "version": "2.78.1"
         }
     ],
     "ui": [
@@ -261,8 +261,9 @@
                         {
                             "type": "checkbox",
                             "label": "ON/OFF",
-                            "shortname": "OFF",
-                            "address": "/sfIter/sfIter/ON/OFF",
+                            "varname": "fCheckbox0",
+                            "shortname": "ON_OFF",
+                            "address": "/sfIter/sfIter/ON_OFF",
                             "index": 262148
                         }
                     ]
@@ -274,8 +275,9 @@
                         {
                             "type": "hslider",
                             "label": "Dry/Wet Mix",
-                            "shortname": "Wet_Mix",
-                            "address": "/sfIter/sfIter_parameter_s_/Dry/Wet_Mix",
+                            "varname": "fHslider4",
+                            "shortname": "Dry_Wet_Mix",
+                            "address": "/sfIter/sfIter_parameter_s_/Dry_Wet_Mix",
                             "index": 262812,
                             "meta": [
                                 {
@@ -302,6 +304,7 @@
                         {
                             "type": "hslider",
                             "label": "Low RT60",
+                            "varname": "fHslider8",
                             "shortname": "Low_RT60",
                             "address": "/sfIter/sfIter_parameter_s_/Low_RT60",
                             "index": 262896,
@@ -333,6 +336,7 @@
                         {
                             "type": "hslider",
                             "label": "Mid RT60",
+                            "varname": "fHslider7",
                             "shortname": "Mid_RT60",
                             "address": "/sfIter/sfIter_parameter_s_/Mid_RT60",
                             "index": 262888,
@@ -364,6 +368,7 @@
                         {
                             "type": "hslider",
                             "label": "freq",
+                            "varname": "fHslider5",
                             "shortname": "freq",
                             "address": "/sfIter/sfIter_parameter_s_/freq",
                             "index": 262824,
@@ -389,6 +394,7 @@
                         {
                             "type": "hslider",
                             "label": "freqmod",
+                            "varname": "fHslider6",
                             "shortname": "freqmod",
                             "address": "/sfIter/sfIter_parameter_s_/freqmod",
                             "index": 262836,
@@ -414,6 +420,7 @@
                         {
                             "type": "hslider",
                             "label": "high_cut",
+                            "varname": "fHslider0",
                             "shortname": "high_cut",
                             "address": "/sfIter/sfIter_parameter_s_/high_cut",
                             "index": 262180,
@@ -430,6 +437,7 @@
                         {
                             "type": "hslider",
                             "label": "ratio_env",
+                            "varname": "fHslider3",
                             "shortname": "ratio_env",
                             "address": "/sfIter/sfIter_parameter_s_/ratio_env",
                             "index": 262260,
@@ -455,6 +463,7 @@
                         {
                             "type": "hslider",
                             "label": "speed",
+                            "varname": "fHslider2",
                             "shortname": "speed",
                             "address": "/sfIter/sfIter_parameter_s_/speed",
                             "index": 262208,
@@ -480,6 +489,7 @@
                         {
                             "type": "hslider",
                             "label": "vol",
+                            "varname": "fHslider1",
                             "shortname": "vol",
                             "address": "/sfIter/sfIter_parameter_s_/vol",
                             "index": 262184,

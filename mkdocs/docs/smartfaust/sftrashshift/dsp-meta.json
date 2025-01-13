@@ -1,7 +1,7 @@
 {
     "name": "sfTrashShift",
     "filename": "sfTrashShift.dsp",
-    "version": "2.75.7",
+    "version": "2.78.0",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 524404,
-    "code": "mEW6",
+    "code": "SGu6",
     "inputs": 1,
     "outputs": 1,
     "meta": [
@@ -69,7 +69,7 @@
             "filters_lib_tf1s_license": "MIT-style STK-4.3 license"
         },
         {
-            "filters_lib_version": "1.3.0"
+            "filters_lib_version": "1.6.0"
         },
         {
             "library_path0": "/usr/local/share/faust/stdfaust.lib"
@@ -105,7 +105,7 @@
             "maths_lib_name": "Faust Math Library"
         },
         {
-            "maths_lib_version": "2.8.0"
+            "maths_lib_version": "2.8.1"
         },
         {
             "name": "sfTrashShift"
@@ -123,7 +123,7 @@
             "signals_lib_version": "1.6.0"
         },
         {
-            "version": "2.75.10"
+            "version": "2.78.1"
         }
     ],
     "ui": [
@@ -138,13 +138,15 @@
                         {
                             "type": "checkbox",
                             "label": "ON/OFF",
-                            "shortname": "OFF",
-                            "address": "/sfTrashShift/sfTrashShift/ON/OFF",
+                            "varname": "fCheckbox0",
+                            "shortname": "ON_OFF",
+                            "address": "/sfTrashShift/sfTrashShift/ON_OFF",
                             "index": 0
                         },
                         {
                             "type": "vslider",
                             "label": "Volume",
+                            "varname": "fVslider0",
                             "shortname": "Volume",
                             "address": "/sfTrashShift/sfTrashShift/Volume",
                             "index": 12,
@@ -162,6 +164,7 @@
                         {
                             "type": "hslider",
                             "label": "dry_wet",
+                            "varname": "fHslider1",
                             "shortname": "dry_wet",
                             "address": "/sfTrashShift/sfTrashShift_parameter_s_/dry_wet",
                             "index": 524356,
@@ -184,6 +187,7 @@
                         {
                             "type": "hslider",
                             "label": "gain",
+                            "varname": "fHslider0",
                             "shortname": "gain",
                             "address": "/sfTrashShift/sfTrashShift_parameter_s_/gain",
                             "index": 44,
@@ -206,6 +210,7 @@
                         {
                             "type": "hslider",
                             "label": "shift",
+                            "varname": "fHslider2",
                             "shortname": "shift",
                             "address": "/sfTrashShift/sfTrashShift_parameter_s_/shift",
                             "index": 524380,

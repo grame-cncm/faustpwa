@@ -1,7 +1,7 @@
 {
     "name": "shakerxy",
     "filename": "shakerxy.dsp",
-    "version": "2.75.7",
+    "version": "2.78.0",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 132,
-    "code": "WBO5",
+    "code": "mEO5",
     "inputs": 0,
     "outputs": 2,
     "meta": [
@@ -24,7 +24,7 @@
             "basics_lib_tabulateNd": "Copyright (C) 2023 Bart Brouns <bart@magnetophon.nl>"
         },
         {
-            "basics_lib_version": "1.19.1"
+            "basics_lib_version": "1.21.0"
         },
         {
             "compile_options": "-single -scal -e ../shakerxy.dsp -o shakerxy.dsp"
@@ -54,7 +54,7 @@
             "interpolators_lib_name": "Faust Interpolator Library"
         },
         {
-            "interpolators_lib_version": "1.3.1"
+            "interpolators_lib_version": "1.4.0"
         },
         {
             "library_path0": "/usr/local/share/faust/stdfaust.lib"
@@ -93,7 +93,7 @@
             "maths_lib_name": "Faust Math Library"
         },
         {
-            "maths_lib_version": "2.8.0"
+            "maths_lib_version": "2.8.1"
         },
         {
             "name": "shakerxy"
@@ -120,7 +120,7 @@
             "soundfiles_lib_version": "1.7.0"
         },
         {
-            "version": "2.75.10"
+            "version": "2.78.1"
         }
     ],
     "ui": [
@@ -131,6 +131,7 @@
                 {
                     "type": "soundfile",
                     "label": "ShakerX",
+                    "varname": "fSoundfile0",
                     "url": "{-Shakerxy_percutom_25bpm.flac-;-Shakerxy_springmetal_50bpm.flac-;-Shakerxy_808_kicksnare_100bpm.flac-}",
                     "address": "/shakerxy/ShakerX",
                     "index": 0
@@ -138,6 +139,7 @@
                 {
                     "type": "soundfile",
                     "label": "ShakerY",
+                    "varname": "fSoundfile1",
                     "url": "{-Shakerxy_triangle_25bpm.flac-;-Shakerxy_glupsdrum_50bpm.flac-;-Shakerxy_808_hh_100bpm.flac-}",
                     "address": "/shakerxy/ShakerY",
                     "index": 4
@@ -145,6 +147,7 @@
                 {
                     "type": "hslider",
                     "label": "X",
+                    "varname": "fHslider0",
                     "shortname": "X",
                     "address": "/shakerxy/X",
                     "index": 36,
@@ -164,6 +167,7 @@
                 {
                     "type": "hslider",
                     "label": "Y",
+                    "varname": "fHslider2",
                     "shortname": "Y",
                     "address": "/shakerxy/Y",
                     "index": 88,
@@ -183,8 +187,9 @@
                 {
                     "type": "checkbox",
                     "label": "ON / OFF",
-                    "shortname": "_OFF",
-                    "address": "/shakerxy/ON_/_OFF",
+                    "varname": "fCheckbox0",
+                    "shortname": "ON_OFF",
+                    "address": "/shakerxy/ON___OFF",
                     "index": 8,
                     "meta": [
                         {
@@ -195,6 +200,7 @@
                 {
                     "type": "hslider",
                     "label": "Shakers",
+                    "varname": "fHslider1",
                     "shortname": "Shakers",
                     "address": "/shakerxy/Shakers",
                     "index": 64,

@@ -1,7 +1,7 @@
 {
     "name": "sequenceur",
     "filename": "sequenceur.dsp",
-    "version": "2.75.7",
+    "version": "2.78.0",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 336,
-    "code": "QO3i",
+    "code": "+B3j",
     "inputs": 0,
     "outputs": 2,
     "meta": [
@@ -27,7 +27,7 @@
             "basics_lib_tabulateNd": "Copyright (C) 2023 Bart Brouns <bart@magnetophon.nl>"
         },
         {
-            "basics_lib_version": "1.19.1"
+            "basics_lib_version": "1.21.0"
         },
         {
             "compile_options": "-single -scal -e ../sequenceur.dsp -o sequenceur.dsp"
@@ -63,7 +63,7 @@
             "maths_lib_name": "Faust Math Library"
         },
         {
-            "maths_lib_version": "2.8.0"
+            "maths_lib_version": "2.8.1"
         },
         {
             "name": "sequenceur"
@@ -84,7 +84,7 @@
             "soundfiles": "https://raw.githubusercontent.com/grame-cncm/GameLAN/master/sequenceur"
         },
         {
-            "version": "2.75.10"
+            "version": "2.78.1"
         }
     ],
     "ui": [
@@ -95,6 +95,7 @@
                 {
                     "type": "hslider",
                     "label": "Decay",
+                    "varname": "fHslider1",
                     "shortname": "Decay",
                     "address": "/sequenceur/Decay",
                     "index": 268,
@@ -114,6 +115,7 @@
                 {
                     "type": "hbargraph",
                     "label": "Suivi",
+                    "varname": "fHbargraph0",
                     "shortname": "Suivi",
                     "address": "/sequenceur/Suivi",
                     "index": 68,
@@ -123,6 +125,7 @@
                 {
                     "type": "hslider",
                     "label": "Samples",
+                    "varname": "fHslider0",
                     "shortname": "Samples",
                     "address": "/sequenceur/Samples",
                     "index": 20,
@@ -142,8 +145,9 @@
                 {
                     "type": "checkbox",
                     "label": "ON/OFF",
-                    "shortname": "OFF",
-                    "address": "/sequenceur/ON/OFF",
+                    "varname": "fCheckbox0",
+                    "shortname": "ON_OFF",
+                    "address": "/sequenceur/ON_OFF",
                     "index": 16,
                     "meta": [
                         {
@@ -154,6 +158,7 @@
                 {
                     "type": "vslider",
                     "label": "Tempo",
+                    "varname": "fVslider0",
                     "shortname": "Tempo",
                     "address": "/sequenceur/Tempo",
                     "index": 48,
@@ -191,6 +196,7 @@
                                 {
                                     "type": "checkbox",
                                     "label": "01",
+                                    "varname": "fCheckbox1",
                                     "shortname": "01",
                                     "address": "/sequenceur/Steps/0x00/01",
                                     "index": 32
@@ -198,6 +204,7 @@
                                 {
                                     "type": "checkbox",
                                     "label": "02",
+                                    "varname": "fCheckbox2",
                                     "shortname": "02",
                                     "address": "/sequenceur/Steps/0x00/02",
                                     "index": 80
@@ -216,6 +223,7 @@
                                 {
                                     "type": "checkbox",
                                     "label": "03",
+                                    "varname": "fCheckbox3",
                                     "shortname": "03",
                                     "address": "/sequenceur/Steps/0x00/03",
                                     "index": 92
@@ -223,6 +231,7 @@
                                 {
                                     "type": "checkbox",
                                     "label": "04",
+                                    "varname": "fCheckbox4",
                                     "shortname": "04",
                                     "address": "/sequenceur/Steps/0x00/04",
                                     "index": 104
@@ -241,6 +250,7 @@
                                 {
                                     "type": "checkbox",
                                     "label": "05",
+                                    "varname": "fCheckbox5",
                                     "shortname": "05",
                                     "address": "/sequenceur/Steps/0x00/05",
                                     "index": 116
@@ -248,6 +258,7 @@
                                 {
                                     "type": "checkbox",
                                     "label": "06",
+                                    "varname": "fCheckbox6",
                                     "shortname": "06",
                                     "address": "/sequenceur/Steps/0x00/06",
                                     "index": 128
@@ -266,6 +277,7 @@
                                 {
                                     "type": "checkbox",
                                     "label": "07",
+                                    "varname": "fCheckbox7",
                                     "shortname": "07",
                                     "address": "/sequenceur/Steps/0x00/07",
                                     "index": 140
@@ -273,6 +285,7 @@
                                 {
                                     "type": "checkbox",
                                     "label": "08",
+                                    "varname": "fCheckbox8",
                                     "shortname": "08",
                                     "address": "/sequenceur/Steps/0x00/08",
                                     "index": 152
@@ -291,6 +304,7 @@
                                 {
                                     "type": "checkbox",
                                     "label": "09",
+                                    "varname": "fCheckbox9",
                                     "shortname": "09",
                                     "address": "/sequenceur/Steps/0x00/09",
                                     "index": 164
@@ -298,6 +312,7 @@
                                 {
                                     "type": "checkbox",
                                     "label": "10",
+                                    "varname": "fCheckbox10",
                                     "shortname": "10",
                                     "address": "/sequenceur/Steps/0x00/10",
                                     "index": 176
@@ -316,6 +331,7 @@
                                 {
                                     "type": "checkbox",
                                     "label": "11",
+                                    "varname": "fCheckbox11",
                                     "shortname": "11",
                                     "address": "/sequenceur/Steps/0x00/11",
                                     "index": 188
@@ -323,6 +339,7 @@
                                 {
                                     "type": "checkbox",
                                     "label": "12",
+                                    "varname": "fCheckbox12",
                                     "shortname": "12",
                                     "address": "/sequenceur/Steps/0x00/12",
                                     "index": 200
@@ -341,6 +358,7 @@
                                 {
                                     "type": "checkbox",
                                     "label": "13",
+                                    "varname": "fCheckbox13",
                                     "shortname": "13",
                                     "address": "/sequenceur/Steps/0x00/13",
                                     "index": 212
@@ -348,6 +366,7 @@
                                 {
                                     "type": "checkbox",
                                     "label": "14",
+                                    "varname": "fCheckbox14",
                                     "shortname": "14",
                                     "address": "/sequenceur/Steps/0x00/14",
                                     "index": 224
@@ -366,6 +385,7 @@
                                 {
                                     "type": "checkbox",
                                     "label": "15",
+                                    "varname": "fCheckbox15",
                                     "shortname": "15",
                                     "address": "/sequenceur/Steps/0x00/15",
                                     "index": 236
@@ -373,6 +393,7 @@
                                 {
                                     "type": "checkbox",
                                     "label": "16",
+                                    "varname": "fCheckbox16",
                                     "shortname": "16",
                                     "address": "/sequenceur/Steps/0x00/16",
                                     "index": 248
@@ -384,6 +405,7 @@
                 {
                     "type": "soundfile",
                     "label": "sample_2",
+                    "varname": "fSoundfile0",
                     "url": "{-Bipsquare_oneshot.flac-}",
                     "address": "/sequenceur/sample_2",
                     "index": 0
@@ -391,6 +413,7 @@
                 {
                     "type": "soundfile",
                     "label": "sample_4",
+                    "varname": "fSoundfile1",
                     "url": "{-Hihat_oneshot_N.flac-}",
                     "address": "/sequenceur/sample_4",
                     "index": 4
@@ -398,6 +421,7 @@
                 {
                     "type": "soundfile",
                     "label": "sample_6",
+                    "varname": "fSoundfile2",
                     "url": "{-Kick_oneshot_N.flac-}",
                     "address": "/sequenceur/sample_6",
                     "index": 8
@@ -405,6 +429,7 @@
                 {
                     "type": "soundfile",
                     "label": "sample_8",
+                    "varname": "fSoundfile3",
                     "url": "{-Snare_oneshot_N.flac-}",
                     "address": "/sequenceur/sample_8",
                     "index": 12
