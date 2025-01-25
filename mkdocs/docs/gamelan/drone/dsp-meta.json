@@ -1,7 +1,7 @@
 {
     "name": "drone",
     "filename": "drone.dsp",
-    "version": "2.78.0",
+    "version": "2.78.3",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 256,
-    "code": "mDTT",
+    "code": "kAXT",
     "inputs": 0,
     "outputs": 2,
     "meta": [
@@ -129,7 +129,7 @@
             "soundfiles_lib_version": "1.7.0"
         },
         {
-            "version": "2.78.1"
+            "version": "2.78.5"
         }
     ],
     "ui": [

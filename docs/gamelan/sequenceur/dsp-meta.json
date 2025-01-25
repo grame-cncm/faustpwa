@@ -1,7 +1,7 @@
 {
     "name": "sequenceur",
     "filename": "sequenceur.dsp",
-    "version": "2.78.0",
+    "version": "2.78.3",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 336,
-    "code": "+B3j",
+    "code": "COni",
     "inputs": 0,
     "outputs": 2,
     "meta": [
@@ -22,9 +22,6 @@
         },
         {
             "basics_lib_pulse_countup_loop_author": "Vince"
-        },
-        {
-            "basics_lib_tabulateNd": "Copyright (C) 2023 Bart Brouns <bart@magnetophon.nl>"
         },
         {
             "basics_lib_version": "1.21.0"
@@ -84,7 +81,7 @@
             "soundfiles": "https://raw.githubusercontent.com/grame-cncm/GameLAN/master/sequenceur"
         },
         {
-            "version": "2.78.1"
+            "version": "2.78.5"
         }
     ],
     "ui": [
