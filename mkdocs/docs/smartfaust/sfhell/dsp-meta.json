@@ -272,7 +272,7 @@
                     "items": [
                         {
                             "type": "checkbox",
-                            "label": "ON OFF",
+                            "label": "ON/OFF",
                             "varname": "fCheckbox0",
                             "shortname": "ON_OFF",
                             "address": "/sfHell/sfHell/ON_OFF",
