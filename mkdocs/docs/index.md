@@ -8,7 +8,7 @@ To install a PWA, flash the QR Code (or click on the picture), then click the *I
 
 ## Programs using sound files
 
-Some programs are using soundfiles that have to be downloadded and copied locally the first time the program is used. Beware: **this make take several seconds**.
+Some programs are using sound files that have to be downloadded and copied locally the first time the program is used. Beware: **this make take several seconds**.
 
 ## Permission request on iOS
 
