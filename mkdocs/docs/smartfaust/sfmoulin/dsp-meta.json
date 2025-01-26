@@ -1,0 +1,340 @@
+{
+    "name": "sfMoulin",
+    "filename": "sfMoulin_old.dsp",
+    "version": "2.78.3",
+    "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
+    "include_pathnames": [
+        "/share/faust",
+        "/usr/local/share/faust",
+        "/usr/share/faust",
+        "."
+    ],
+    "size": 260,
+    "code": "CHbZ",
+    "inputs": 0,
+    "outputs": 1,
+    "meta": [
+        {
+            "analyzers_lib_name": "Faust Analyzer Library"
+        },
+        {
+            "analyzers_lib_version": "1.2.0"
+        },
+        {
+            "author": "Christophe Lebreton, Stéphane Letz"
+        },
+        {
+            "basics_lib_name": "Faust Basic Element Library"
+        },
+        {
+            "basics_lib_version": "1.21.0"
+        },
+        {
+            "compile_options": "-single -scal -e ../sfMoulin.dsp -o sfMoulin.dsp"
+        },
+        {
+            "copyright": "SmartFaust - GRAME(c)2013-2025"
+        },
+        {
+            "filename": "sfMoulin_old.dsp"
+        },
+        {
+            "filters_lib_dcblockerat_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_dcblockerat_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_dcblockerat_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_lowpass0_highpass1": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_lowpass0_highpass1_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_lowpass_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_lowpass_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_lowpass_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_name": "Faust Filters Library"
+        },
+        {
+            "filters_lib_pole_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_pole_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_pole_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_tf1_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_tf1_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_tf1_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_tf1s_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_tf1s_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_tf1s_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters_lib_version": "1.6.0"
+        },
+        {
+            "filters_lib_zero_author": "Julius O. Smith III"
+        },
+        {
+            "filters_lib_zero_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters_lib_zero_license": "MIT-style STK-4.3 license"
+        },
+        {
+            "library_path0": "/Users/letz/Developpements/smartfaust/src/sfMoulin/moulin_v0.1.lib"
+        },
+        {
+            "library_path1": "/usr/local/share/faust/stdfaust.lib"
+        },
+        {
+            "library_path2": "/usr/local/share/faust/filters.lib"
+        },
+        {
+            "library_path3": "/usr/local/share/faust/maths.lib"
+        },
+        {
+            "library_path4": "/usr/local/share/faust/platform.lib"
+        },
+        {
+            "library_path5": "/usr/local/share/faust/analyzers.lib"
+        },
+        {
+            "library_path6": "/usr/local/share/faust/signals.lib"
+        },
+        {
+            "library_path7": "/usr/local/share/faust/basics.lib"
+        },
+        {
+            "license": "BSD & STK-4.3"
+        },
+        {
+            "maths_lib_author": "GRAME"
+        },
+        {
+            "maths_lib_copyright": "GRAME"
+        },
+        {
+            "maths_lib_license": "LGPL with exception"
+        },
+        {
+            "maths_lib_name": "Faust Math Library"
+        },
+        {
+            "maths_lib_version": "2.8.1"
+        },
+        {
+            "moulin_v0_1_lib_author": "Christophe Lebreton, Stéphane Letz"
+        },
+        {
+            "moulin_v0_1_lib_copyright": "SmartFaust - GRAME(c)2013-2025"
+        },
+        {
+            "moulin_v0_1_lib_license": "BSD"
+        },
+        {
+            "moulin_v0_1_lib_name": "sfGrain"
+        },
+        {
+            "moulin_v0_1_lib_version": "1.00"
+        },
+        {
+            "name": "sfMoulin"
+        },
+        {
+            "platform_lib_name": "Generic Platform Library"
+        },
+        {
+            "platform_lib_version": "1.3.0"
+        },
+        {
+            "signals_lib_name": "Faust Signal Routing Library"
+        },
+        {
+            "signals_lib_version": "1.6.0"
+        },
+        {
+            "version": "2.78.5"
+        }
+    ],
+    "ui": [
+        {
+            "type": "vgroup",
+            "label": "sfMoulin",
+            "items": [
+                {
+                    "type": "vgroup",
+                    "label": "select your sample 1 to 8",
+                    "items": [
+                        {
+                            "type": "vgroup",
+                            "label": "sfMoulin",
+                            "items": [
+                                {
+                                    "type": "nentry",
+                                    "label": "Select Sample",
+                                    "varname": "fEntry0",
+                                    "shortname": "Select_Sample",
+                                    "address": "/sfMoulin/select_your_sample_1_to_8/sfMoulin/Select_Sample",
+                                    "index": 152,
+                                    "meta": [
+                                        {
+                                            "style": "menu{-1-:1;-2-:2;-3-:3;-4-:4;-5-:5;-6-:6;-7-:7;-8-:8}"
+                                        }
+                                    ],
+                                    "init": 1,
+                                    "min": 1,
+                                    "max": 8,
+                                    "step": 1
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vgroup",
+                            "label": "sfMoulin parameter(s)",
+                            "items": [
+                                {
+                                    "type": "hslider",
+                                    "label": "acc_x",
+                                    "varname": "fHslider0",
+                                    "shortname": "acc_x",
+                                    "address": "/sfMoulin/select_your_sample_1_to_8/sfMoulin_parameter_s_/acc_x",
+                                    "index": 20,
+                                    "meta": [
+                                        {
+                                            "acc": "0 0 -10 0 10"
+                                        },
+                                        {
+                                            "color": "0 255 0"
+                                        },
+                                        {
+                                            "hidden": "1"
+                                        }
+                                    ],
+                                    "init": 0,
+                                    "min": -100,
+                                    "max": 100,
+                                    "step": 1
+                                },
+                                {
+                                    "type": "hslider",
+                                    "label": "acc_y",
+                                    "varname": "fHslider1",
+                                    "shortname": "acc_y",
+                                    "address": "/sfMoulin/select_your_sample_1_to_8/sfMoulin_parameter_s_/acc_y",
+                                    "index": 44,
+                                    "meta": [
+                                        {
+                                            "acc": "1 0 -10 0 10"
+                                        },
+                                        {
+                                            "color": "0 255 0"
+                                        },
+                                        {
+                                            "hidden": "1"
+                                        }
+                                    ],
+                                    "init": 0,
+                                    "min": -100,
+                                    "max": 100,
+                                    "step": 1
+                                },
+                                {
+                                    "type": "hslider",
+                                    "label": "acc_z",
+                                    "varname": "fHslider2",
+                                    "shortname": "acc_z",
+                                    "address": "/sfMoulin/select_your_sample_1_to_8/sfMoulin_parameter_s_/acc_z",
+                                    "index": 64,
+                                    "meta": [
+                                        {
+                                            "acc": "2 0 -10 0 10"
+                                        },
+                                        {
+                                            "color": "0 255 0"
+                                        },
+                                        {
+                                            "hidden": "1"
+                                        }
+                                    ],
+                                    "init": 0,
+                                    "min": -100,
+                                    "max": 100,
+                                    "step": 1
+                                },
+                                {
+                                    "type": "hslider",
+                                    "label": "fade_out",
+                                    "varname": "fHslider3",
+                                    "shortname": "fade_out",
+                                    "address": "/sfMoulin/select_your_sample_1_to_8/sfMoulin_parameter_s_/fade_out",
+                                    "index": 100,
+                                    "meta": [
+                                        {
+                                            "acc": "1 0 -10 0 10"
+                                        },
+                                        {
+                                            "color": "255 255 0"
+                                        },
+                                        {
+                                            "hidden": "1"
+                                        }
+                                    ],
+                                    "init": 130,
+                                    "min": 0,
+                                    "max": 1000,
+                                    "step": 1
+                                }
+                            ]
+                        },
+                        {
+                            "type": "soundfile",
+                            "label": "sounds",
+                            "varname": "fSoundfile0",
+                            "url": "{-sampleA.flac-;-sampleB.flac-;-sampleC.flac-;-sampleD.flac-;-sampleE.flac-;-sampleF.flac-;-sampleG.flac-;-sampleH.flac-}",
+                            "address": "/sfMoulin/select_your_sample_1_to_8/sounds",
+                            "index": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "vgroup",
+                    "label": "sfMoulin",
+                    "items": [
+                        {
+                            "type": "checkbox",
+                            "label": "ON/OFF",
+                            "varname": "fCheckbox0",
+                            "shortname": "ON_OFF",
+                            "address": "/sfMoulin/sfMoulin/ON_OFF",
+                            "index": 248
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

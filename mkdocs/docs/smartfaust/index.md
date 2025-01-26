@@ -15,6 +15,11 @@ Here is a list of all the applications that are ready to be installed on your co
 <div><a href="sfcapture"><img  width="25%" class="mx-auto d-block" src="sfcapture.png"></a>  </div>
 </center>
 
+### sfgrain
+<center>
+<div><a href="sfgrain"><img  width="25%" class="mx-auto d-block" src="sfgrain.png"></a>  </div>
+</center>
+
 ### sfgretchenscat
 <center>
 <div><a href="sfgretchenscat"><img  width="25%" class="mx-auto d-block" src="sfgretchenscat.png"></a>  </div>
@@ -28,6 +33,16 @@ Here is a list of all the applications that are ready to be installed on your co
 ### sfiter
 <center>
 <div><a href="sfiter"><img  width="25%" class="mx-auto d-block" src="sfiter.png"></a>  </div>
+</center>
+
+### sfmoulin
+<center>
+<div><a href="sfmoulin"><img  width="25%" class="mx-auto d-block" src="sfmoulin.png"></a>  </div>
+</center>
+
+### sfplayer
+<center>
+<div><a href="sfplayer"><img  width="25%" class="mx-auto d-block" src="sfplayer.png"></a>  </div>
 </center>
 
 ### sfsiren
