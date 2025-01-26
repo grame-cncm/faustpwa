@@ -12,13 +12,13 @@ Some programs are using sound files that have to be downloadded and copied local
 
 ## Permission request on iOS
 
-On iOS the user has to explicitely allow permissions when the program needs to access the audio input and use the accelerometers and gyroscope sensors: 
+On iOS the user has to explicitely allow permissions when the program needs to access the audio input with the microphone and/or use the accelerometers and gyroscope sensors: 
 
-- an "Access motion and orentation" permission dialog will be displayed the first time the application is loaded, like in the following example: 
+- an *Access motion and orientation* permission dialog will be displayed the first time the application is loaded and during the first interaction with the screen, like clicking the "ON/OFF" button. See the following example: 
 <div><a href="requestPermissions"><img  width="25%" class="mx-auto d-block" src="requestPermissions.png"></a></div>
 Just click "Allow" so that the instrument can be controlled with gestures.
 
-- a "Would like to access the Microphone" permission dialog will be displayed the first time the application is loaded, like in the following example: 
+- if the program is also using the microphone, the *Would like to access the Microphone* permission dialog will also be displayed the first time the application is loaded and during the first interaction with the screen, like clicking the "ON/OFF" button. See the following example: 
 <div><a href="requestAudio"><img  width="25%" class="mx-auto d-block" src="requestAudio.png"></a></div>
 Just click "Allow" so that the instrument can record audio input.
 
