@@ -10,7 +10,7 @@
         "."
     ],
     "size": 262708,
-    "code": "iIvE",
+    "code": "SFHF",
     "inputs": 0,
     "outputs": 1,
     "meta": [
@@ -132,7 +132,7 @@
             "signals_lib_version": "1.6.0"
         },
         {
-            "version": "2.78.5"
+            "version": "2.78.6"
         }
     ],
     "ui": [
@@ -142,28 +142,28 @@
             "items": [
                 {
                     "type": "vgroup",
-                    "label": "sfGretchen-s Cat",
+                    "label": "sfGretchenCat",
                     "items": [
                         {
                             "type": "checkbox",
                             "label": "ON/OFF",
                             "varname": "fCheckbox0",
                             "shortname": "ON_OFF",
-                            "address": "/sfGretchenCat/sfGretchen-s_Cat/ON_OFF",
+                            "address": "/sfGretchenCat/sfGretchenCat/ON_OFF",
                             "index": 262412
                         }
                     ]
                 },
                 {
                     "type": "vgroup",
-                    "label": "sfGretchen-s Cat parameter(s)",
+                    "label": "sfGretchenCat parameter(s)",
                     "items": [
                         {
                             "type": "hslider",
                             "label": "freq",
                             "varname": "fHslider2",
                             "shortname": "freq",
-                            "address": "/sfGretchenCat/sfGretchen-s_Cat_parameter_s_/freq",
+                            "address": "/sfGretchenCat/sfGretchenCat_parameter_s_/freq",
                             "index": 262428,
                             "meta": [
                                 {
@@ -186,7 +186,7 @@
                             "label": "freqmod",
                             "varname": "fHslider4",
                             "shortname": "freqmod",
-                            "address": "/sfGretchenCat/sfGretchen-s_Cat_parameter_s_/freqmod",
+                            "address": "/sfGretchenCat/sfGretchenCat_parameter_s_/freqmod",
                             "index": 262468,
                             "meta": [
                                 {
@@ -209,7 +209,7 @@
                             "label": "harmoni",
                             "varname": "fHslider3",
                             "shortname": "harmoni",
-                            "address": "/sfGretchenCat/sfGretchen-s_Cat_parameter_s_/harmoni",
+                            "address": "/sfGretchenCat/sfGretchenCat_parameter_s_/harmoni",
                             "index": 262448,
                             "meta": [
                                 {
@@ -232,7 +232,7 @@
                             "label": "high_cut",
                             "varname": "fHslider0",
                             "shortname": "high_cut",
-                            "address": "/sfGretchenCat/sfGretchen-s_Cat_parameter_s_/high_cut",
+                            "address": "/sfGretchenCat/sfGretchenCat_parameter_s_/high_cut",
                             "index": 262372,
                             "meta": [
                                 {
@@ -255,7 +255,7 @@
                             "label": "vol",
                             "varname": "fHslider1",
                             "shortname": "vol",
-                            "address": "/sfGretchenCat/sfGretchen-s_Cat_parameter_s_/vol",
+                            "address": "/sfGretchenCat/sfGretchenCat_parameter_s_/vol",
                             "index": 262392,
                             "meta": [
                                 {

@@ -10,7 +10,7 @@
         "."
     ],
     "size": 524488,
-    "code": "mJ/d",
+    "code": "YKDd",
     "inputs": 0,
     "outputs": 1,
     "meta": [
@@ -180,7 +180,7 @@
             "soundfiles": "https://raw.githubusercontent.com/grame-cncm/smartfaust/master/src/sfGrain"
         },
         {
-            "version": "2.78.5"
+            "version": "2.78.6"
         }
     ],
     "ui": [

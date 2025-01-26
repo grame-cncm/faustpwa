@@ -1,5 +1,5 @@
 {
-    "name": "Capture",
+    "name": "sfCapture",
     "filename": "sfCapture.dsp",
     "version": "2.78.3",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 5958504,
-    "code": "kP/F",
+    "code": "SPPF",
     "inputs": 1,
     "outputs": 1,
     "meta": [
@@ -117,7 +117,7 @@
             "maths_lib_version": "2.8.1"
         },
         {
-            "name": "Capture"
+            "name": "sfCapture"
         },
         {
             "platform_lib_name": "Generic Platform Library"
@@ -132,13 +132,13 @@
             "signals_lib_version": "1.6.0"
         },
         {
-            "version": "2.78.5"
+            "version": "2.78.6"
         }
     ],
     "ui": [
         {
             "type": "vgroup",
-            "label": "Capture",
+            "label": "sfCapture",
             "items": [
                 {
                     "type": "vgroup",
@@ -149,7 +149,7 @@
                             "label": "PLAY",
                             "varname": "fCheckbox1",
                             "shortname": "PLAY",
-                            "address": "/Capture/sfCapture/PLAY",
+                            "address": "/sfCapture/sfCapture/PLAY",
                             "index": 1764092,
                             "meta": [
                                 {
@@ -162,7 +162,7 @@
                             "label": "RECORD",
                             "varname": "fCheckbox0",
                             "shortname": "RECORD",
-                            "address": "/Capture/sfCapture/RECORD",
+                            "address": "/sfCapture/sfCapture/RECORD",
                             "index": 1764064,
                             "meta": [
                                 {
@@ -181,7 +181,7 @@
                             "label": "delay",
                             "varname": "fHslider4",
                             "shortname": "delay",
-                            "address": "/Capture/sfCapture_parameter_s_/delay",
+                            "address": "/sfCapture/sfCapture_parameter_s_/delay",
                             "index": 5958456,
                             "meta": [
                                 {
@@ -207,7 +207,7 @@
                             "label": "dry_wet",
                             "varname": "fHslider1",
                             "shortname": "dry_wet",
-                            "address": "/Capture/sfCapture_parameter_s_/dry_wet",
+                            "address": "/sfCapture/sfCapture_parameter_s_/dry_wet",
                             "index": 40,
                             "meta": [
                                 {
@@ -230,7 +230,7 @@
                             "label": "feedback",
                             "varname": "fHslider3",
                             "shortname": "feedback",
-                            "address": "/Capture/sfCapture_parameter_s_/feedback",
+                            "address": "/sfCapture/sfCapture_parameter_s_/feedback",
                             "index": 1764140,
                             "meta": [
                                 {
@@ -253,7 +253,7 @@
                             "label": "speed",
                             "varname": "fHslider2",
                             "shortname": "speed",
-                            "address": "/Capture/sfCapture_parameter_s_/speed",
+                            "address": "/sfCapture/sfCapture_parameter_s_/speed",
                             "index": 1764096,
                             "meta": [
                                 {
@@ -276,7 +276,7 @@
                             "label": "volume",
                             "varname": "fHslider0",
                             "shortname": "volume",
-                            "address": "/Capture/sfCapture_parameter_s_/volume",
+                            "address": "/sfCapture/sfCapture_parameter_s_/volume",
                             "index": 20,
                             "meta": [
                                 {
