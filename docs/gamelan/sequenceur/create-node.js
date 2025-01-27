@@ -80,7 +80,7 @@ const createFaustNode = async (audioContext, dspName = "template", voices = 0, s
 }
 
 /**
- * Connects an audio input stream to a Faust audio node.
+ * Connects an audio input stream to a Faust WebAudio node.
  * 
  * @param {AudioContext} audioContext - The Web Audio API AudioContext to which the Faust audio node is connected.
  * @param {string} id - The ID of the audio input device to connect.
@@ -109,6 +109,8 @@ async function connectToAudioInput(audioContext, id, faustNode, inputStreamNode)
 };
 
 /**
+ * Creates a Faust UI for a Faust audio node.
+ * 
  * @param {FaustAudioWorkletNode} faustNode 
  */
 async function createFaustUI(divFaustUI, faustNode) {
@@ -135,6 +137,9 @@ async function createFaustUI(divFaustUI, faustNode) {
     faustUI.resize();
 };
 
+/**
+ * Request permission to use motion and orientation sensors.
+ */
 async function requestPermissions() {
 
     // Explicitly request permission on iOS before calling startSensors()
