@@ -1,6 +1,6 @@
 {
     "name": "sfGrain",
-    "filename": "sfGrain_old.dsp",
+    "filename": "sfGrain.dsp",
     "version": "2.78.3",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 524488,
-    "code": "YKDd",
+    "code": "oJvd",
     "inputs": 0,
     "outputs": 1,
     "meta": [
@@ -30,7 +30,7 @@
             "delays_lib_version": "1.1.0"
         },
         {
-            "filename": "sfGrain_old.dsp"
+            "filename": "sfGrain.dsp"
         },
         {
             "filters_lib_lowpass0_highpass1": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
@@ -114,7 +114,7 @@
             "grain_v0_1_lib_name": "sfGrain"
         },
         {
-            "grain_v0_1_lib_version": "1.04"
+            "grain_v0_1_lib_version": "1.00"
         },
         {
             "library_path0": "/usr/local/share/faust/stdfaust.lib"

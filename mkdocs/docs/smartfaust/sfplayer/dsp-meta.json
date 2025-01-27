@@ -1,6 +1,6 @@
 {
     "name": "sfPlayer",
-    "filename": "sfPlayer_old.dsp",
+    "filename": "sfPlayer.dsp",
     "version": "2.78.3",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
@@ -9,8 +9,8 @@
         "/usr/share/faust",
         "."
     ],
-    "size": 1041212,
-    "code": "aNhEASQPHw==",
+    "size": 1041244,
+    "code": "kGhFASQPHw==",
     "inputs": 0,
     "outputs": 1,
     "meta": [
@@ -42,7 +42,7 @@
             "delays_lib_version": "1.1.0"
         },
         {
-            "filename": "sfPlayer_old.dsp"
+            "filename": "sfPlayer.dsp"
         },
         {
             "filters_lib_allpass_comb_author": "Julius O. Smith III"
@@ -364,6 +364,75 @@
                     "label": "select your sample 1 to 10",
                     "items": [
                         {
+                            "type": "vslider",
+                            "label": "acc_x",
+                            "varname": "fVslider0",
+                            "shortname": "acc_x",
+                            "address": "/sfPlayer/select_your_sample_1_to_10/acc_x",
+                            "index": 131264,
+                            "meta": [
+                                {
+                                    "acc": "0 0 -10 0 10"
+                                },
+                                {
+                                    "color": "0 255 0"
+                                },
+                                {
+                                    "hidden": "1"
+                                }
+                            ],
+                            "init": 0,
+                            "min": -100,
+                            "max": 100,
+                            "step": 1
+                        },
+                        {
+                            "type": "vslider",
+                            "label": "acc_y",
+                            "varname": "fVslider1",
+                            "shortname": "acc_y",
+                            "address": "/sfPlayer/select_your_sample_1_to_10/acc_y",
+                            "index": 131288,
+                            "meta": [
+                                {
+                                    "acc": "1 0 -10 0 10"
+                                },
+                                {
+                                    "color": "0 255 0"
+                                },
+                                {
+                                    "hidden": "1"
+                                }
+                            ],
+                            "init": 0,
+                            "min": -100,
+                            "max": 100,
+                            "step": 1
+                        },
+                        {
+                            "type": "vslider",
+                            "label": "acc_z",
+                            "varname": "fVslider2",
+                            "shortname": "acc_z",
+                            "address": "/sfPlayer/select_your_sample_1_to_10/acc_z",
+                            "index": 131308,
+                            "meta": [
+                                {
+                                    "acc": "2 0 -10 0 10"
+                                },
+                                {
+                                    "color": "0 255 0"
+                                },
+                                {
+                                    "hidden": "1"
+                                }
+                            ],
+                            "init": 0,
+                            "min": -100,
+                            "max": 100,
+                            "step": 1
+                        },
+                        {
                             "type": "vgroup",
                             "label": "sfPlayer parameter(s)",
                             "items": [
@@ -373,7 +442,7 @@
                                     "varname": "fEntry0",
                                     "shortname": "Select_Sample",
                                     "address": "/sfPlayer/select_your_sample_1_to_10/sfPlayer_parameter_s_/Select_Sample",
-                                    "index": 131396,
+                                    "index": 131404,
                                     "meta": [
                                         {
                                             "style": "menu{-1-:1;-2-:2;-3-:3;-4-:4;-5-:5;-6-:6;-7-:7;-8-:8;-9-:9;-10-:10}"
@@ -390,7 +459,7 @@
                                     "varname": "fHslider6",
                                     "shortname": "fade_out",
                                     "address": "/sfPlayer/select_your_sample_1_to_10/sfPlayer_parameter_s_/fade_out",
-                                    "index": 131328,
+                                    "index": 131336,
                                     "meta": [
                                         {
                                             "acc": "1 0 -10 0 10"
@@ -423,7 +492,7 @@
                             "varname": "fHslider7",
                             "shortname": "v_sfPlayer_parameter_s_fade_in",
                             "address": "/sfPlayer/select_your_sample_1_to_10/v_:sfPlayer_parameter_s__fade_in",
-                            "index": 131360,
+                            "index": 131368,
                             "meta": [
                                 {
                                     "acc": "1 0 -10 0 10"
@@ -439,86 +508,6 @@
                             "min": 0,
                             "max": 1000,
                             "step": 1
-                        },
-                        {
-                            "type": "hgroup",
-                            "label": "v:sfPlayer parameter(s)/accel",
-                            "meta": [
-                                {
-                                    "hidden": "1"
-                                }
-                            ],
-                            "items": [
-                                {
-                                    "type": "vslider",
-                                    "label": "acc_x",
-                                    "varname": "fVslider0",
-                                    "shortname": "acc_x",
-                                    "address": "/sfPlayer/select_your_sample_1_to_10/v:sfPlayer_parameter_s__accel/acc_x",
-                                    "index": 131256,
-                                    "meta": [
-                                        {
-                                            "acc": "0 0 -10 0 10"
-                                        },
-                                        {
-                                            "color": "0 255 0"
-                                        },
-                                        {
-                                            "hidden": "1"
-                                        }
-                                    ],
-                                    "init": 0,
-                                    "min": -100,
-                                    "max": 100,
-                                    "step": 1
-                                },
-                                {
-                                    "type": "vslider",
-                                    "label": "acc_y",
-                                    "varname": "fVslider1",
-                                    "shortname": "acc_y",
-                                    "address": "/sfPlayer/select_your_sample_1_to_10/v:sfPlayer_parameter_s__accel/acc_y",
-                                    "index": 131280,
-                                    "meta": [
-                                        {
-                                            "acc": "1 0 -10 0 10"
-                                        },
-                                        {
-                                            "color": "0 255 0"
-                                        },
-                                        {
-                                            "hidden": "1"
-                                        }
-                                    ],
-                                    "init": 0,
-                                    "min": -100,
-                                    "max": 100,
-                                    "step": 1
-                                },
-                                {
-                                    "type": "vslider",
-                                    "label": "acc_z",
-                                    "varname": "fVslider2",
-                                    "shortname": "acc_z",
-                                    "address": "/sfPlayer/select_your_sample_1_to_10/v:sfPlayer_parameter_s__accel/acc_z",
-                                    "index": 131300,
-                                    "meta": [
-                                        {
-                                            "acc": "2 0 -10 0 10"
-                                        },
-                                        {
-                                            "color": "0 255 0"
-                                        },
-                                        {
-                                            "hidden": "1"
-                                        }
-                                    ],
-                                    "init": 0,
-                                    "min": -100,
-                                    "max": 100,
-                                    "step": 1
-                                }
-                            ]
                         }
                     ]
                 },
@@ -546,7 +535,7 @@
                             "varname": "fHslider5",
                             "shortname": "DryWet",
                             "address": "/sfPlayer/sfPlayer_parameter_s_/DryWet",
-                            "index": 131228,
+                            "index": 131236,
                             "meta": [
                                 {
                                     "acc": "1 0 -10 0 10"
@@ -598,7 +587,7 @@
                             "varname": "fHslider8",
                             "shortname": "Wah_parameter",
                             "address": "/sfPlayer/sfPlayer_parameter_s_/Wah_parameter",
-                            "index": 131508,
+                            "index": 131516,
                             "meta": [
                                 {
                                     "1": ""
@@ -624,7 +613,7 @@
                             "varname": "fHslider2",
                             "shortname": "Low_RT60",
                             "address": "/sfPlayer/sfPlayer_parameter_s_/Low_RT60",
-                            "index": 72,
+                            "index": 80,
                             "meta": [
                                 {
                                     "2": ""
@@ -650,7 +639,7 @@
                             "varname": "fHslider1",
                             "shortname": "Mid_RT60",
                             "address": "/sfPlayer/sfPlayer_parameter_s_/Mid_RT60",
-                            "index": 64,
+                            "index": 72,
                             "meta": [
                                 {
                                     "3": ""
@@ -676,7 +665,7 @@
                             "varname": "fHslider4",
                             "shortname": "dry_wet",
                             "address": "/sfPlayer/sfPlayer_parameter_s_/dry_wet",
-                            "index": 131208,
+                            "index": 131216,
                             "meta": [
                                 {
                                     "acc": "2 0 -10 0 10"
@@ -699,7 +688,7 @@
                             "varname": "fHslider9",
                             "shortname": "shift",
                             "address": "/sfPlayer/sfPlayer_parameter_s_/shift",
-                            "index": 655864,
+                            "index": 655872,
                             "meta": [
                                 {
                                     "acc": "0 0 -10 0 10"
@@ -725,7 +714,7 @@
                             "varname": "fHslider3",
                             "shortname": "volume",
                             "address": "/sfPlayer/sfPlayer_parameter_s_/volume",
-                            "index": 131188,
+                            "index": 131196,
                             "meta": [
                                 {
                                     "acc": "1 0 -10 10 0 1"

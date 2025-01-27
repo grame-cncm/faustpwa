@@ -1,6 +1,6 @@
 {
     "name": "sfMoulin",
-    "filename": "sfMoulin_old.dsp",
+    "filename": "sfMoulin.dsp",
     "version": "2.78.3",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 260,
-    "code": "0HbZ",
+    "code": "wHHZ",
     "inputs": 0,
     "outputs": 1,
     "meta": [
@@ -36,7 +36,7 @@
             "copyright": "SmartFaust - GRAME(c)2013-2025"
         },
         {
-            "filename": "sfMoulin_old.dsp"
+            "filename": "sfMoulin.dsp"
         },
         {
             "filters_lib_dcblockerat_author": "Julius O. Smith III"
@@ -156,7 +156,7 @@
             "moulin_v0_1_lib_license": "BSD"
         },
         {
-            "moulin_v0_1_lib_name": "sfGrain"
+            "moulin_v0_1_lib_name": "sfMoulin"
         },
         {
             "moulin_v0_1_lib_version": "1.00"
