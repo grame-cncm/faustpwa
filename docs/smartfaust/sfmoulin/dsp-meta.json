@@ -10,9 +10,9 @@
         "."
     ],
     "size": 260,
-    "code": "wHHZ",
+    "code": "iDTa",
     "inputs": 0,
-    "outputs": 1,
+    "outputs": 2,
     "meta": [
         {
             "analyzers_lib_name": "Faust Analyzer Library"

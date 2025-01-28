@@ -10,9 +10,9 @@
         "."
     ],
     "size": 779364,
-    "code": "SNMqASQPHw==",
+    "code": "qA8rASQPHw==",
     "inputs": 0,
-    "outputs": 1,
+    "outputs": 2,
     "meta": [
         {
             "analyzers_lib_name": "Faust Analyzer Library"

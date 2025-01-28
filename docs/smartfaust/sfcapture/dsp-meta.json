@@ -10,9 +10,8 @@
         "."
     ],
     "size": 5958504,
-    "code": "8PLF",
     "inputs": 1,
-    "outputs": 1,
+    "outputs": 2,
     "meta": [
         {
             "author": "Christophe Lebreton, Stéphane Letz"

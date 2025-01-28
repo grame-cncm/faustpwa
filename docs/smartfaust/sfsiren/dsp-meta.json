@@ -10,9 +10,9 @@
         "."
     ],
     "size": 262328,
-    "code": "OE/C",
+    "code": "IL7C",
     "inputs": 0,
-    "outputs": 1,
+    "outputs": 2,
     "meta": [
         {
             "author": "Christophe Lebreton"
