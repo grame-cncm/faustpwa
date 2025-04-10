@@ -5,10 +5,17 @@ type of web application that uses modern web capabilities to deliver an app-like
 
 ## Installation and update
 
-To install a PWA, flash the QR Code (or click on the picture). You will be able to **directly test the application running in the Web browser**, and use it until the page is closed. 
+To install a PWA, flash the QR Code (or click on the picture). 
 
+
+#### Using the application as a standard Web page
+You will be able to **directly test the application running in the Web browser**, and use it until the page is closed. 
+
+
+#### Installing the application
 But to keep the application after the Internet connection has been closed, you will have to **explicitly install it**, so that the application **can then be used alone, without any Internet connection**. To do that click the *Install* or *Add to Home Screen* prompt, and follow the instructions. The PWA will then appear on your device's home screen like a native app. PWAs are cross-platform and work on most devices with modern web browsers like Chrome. 
 
+#### Installing a new version of the application
 When a new application version is available, you must first **uninstall the current version before installing the new one**. Additionally, you may need to clear the browser cache (e.g., by using the **"Clear browsing data" option in Chrome or its equivalent in Firefox or Safari**) before proceeding with the installation.
 
 Please note that if the browser cache is cleared, **all previously installed applications will need to be restarted once to reload the necessary data**.
