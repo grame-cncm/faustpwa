@@ -7,7 +7,6 @@ type of web application that uses modern web capabilities to deliver an app-like
 
 To install a PWA, flash the QR Code (or click on the picture). 
 
-
 #### Using the application as a standard Web page
 You will be able to **directly test the application running in the Web browser**, and use it until the page is closed. 
 
