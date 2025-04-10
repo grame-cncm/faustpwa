@@ -5,13 +5,17 @@ type of web application that uses modern web capabilities to deliver an app-like
 
 ## Installation and update
 
-To install a PWA, flash the QR Code (or click on the picture). You will be able to **directly test the application running in the Web browser**. 
+To install a PWA, flash the QR Code (or click on the picture). You will be able to **directly test the application running in the Web browser**, and sue it until the page is closed. 
 
 But to keep the application after the Internet connection has been closed, you will have to **explicitly install it**, so that the application **can then be used alone, without any Internet connection**. To do that click the *Install* or *Add to Home Screen* prompt, and follow the instructions. The PWA will then appear on your device's home screen like a native app. PWAs are cross-platform and work on most devices with modern web browsers like Chrome. 
 
 When a new application version is available, you must first **uninstall the current version before installing the new one**. Additionally, you may need to clear the browser cache (e.g., by using the **"Clear browsing data" option in Chrome or its equivalent in Firefox or Safari**) before proceeding with the installation.
 
 Please note that if the browser cache is cleared, **all previously installed applications will need to be restarted once to reload the necessary data**.
+
+## Screen/power saving 
+
+To ensure the applications run smoothly, the **smartphone screen should remain active**. If the screen turns off automatically, the browser may pause the application and stop audio, sensors, or MIDI. This is due to power-saving features on mobile devices. **We recommend increasing the screen timeout duration in your system settings** for the duration of the performance. This ensures uninterrupted use and proper real-time performance.
 
 ## Programs using sound files
 
