@@ -2,7 +2,7 @@
 
 [GameLAN](https://github.com/grame-cncm/GameLAN) is a set of musical applications designed by [Grame](https://www.grame.fr), Centre National de Création Musicale. 
 
-The 8 applications in the "GameLAN" family ([atomicro](#atomicro), [baliphone](#baliphone), [drone](#drone), [sequenceur](#sequenceur), [shakerxy](#shakerxy), [sinusoide](#sinusoide) can be played solo or in orchestra.
+The 6 applications in the "GameLAN" family ([atomicro](#atomicro), [baliphone](#baliphone), [drone](#drone), [sequenceur](#sequenceur), [shakerxy](#shakerxy), [sinusoide](#sinusoide)) can be played solo or in orchestra.
 
 ## Privacy Policy 
 
