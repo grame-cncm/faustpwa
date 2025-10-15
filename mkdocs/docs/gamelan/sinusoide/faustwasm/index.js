@@ -35,7 +35,7 @@ export default ${(_a = jsCode.match(jsCodeHead)) == null ? void 0 : _a[1]};
       jsFileMod
     )).default;
     dataBinary = await (await fetch(dataFile)).arrayBuffer();
-    wasmBinary = new Uint8Array(await (await fetch(wasmFile)).arrayBuffer());
+    wasmBinary = await (await fetch(wasmFile)).arrayBuffer();
   } else {
     const { promises: fs } = await import("fs");
     const { pathToFileURL } = await import("url");
@@ -61,8 +61,8 @@ export default ${(_b = jsCode.match(jsCodeHead)) == null ? void 0 : _b[1]};
       pathToFileURL(jsFileMod).href
     )).default;
     await fs.unlink(jsFileMod);
-    dataBinary = (await fs.readFile(dataFile)).buffer;
-    wasmBinary = (await fs.readFile(wasmFile)).buffer;
+    dataBinary = new Uint8Array(await fs.readFile(dataFile)).buffer;
+    wasmBinary = new Uint8Array(await fs.readFile(wasmFile)).buffer;
   }
   const faustModule = await FaustModule({
     wasmBinary,
@@ -150,8 +150,7 @@ var getFaustAudioWorkletProcessor = (dependencies, faustData, register = true) =
       for (const path in parameters) {
         const [paramValue] = parameters[path];
         if (paramValue !== this.paramValuesCache[path]) {
-          this.fDSPCode.setParamValue(path, paramValue);
-          this.paramValuesCache[path] = paramValue;
+          this.setParamValue(path, paramValue);
         }
       }
       if (this.fCommunicator.getNewAccDataAvailable()) {
@@ -184,6 +183,14 @@ var getFaustAudioWorkletProcessor = (dependencies, faustData, register = true) =
         }
         case "pitchWheel": {
           this.pitchWheel(msg.data[0], msg.data[1]);
+          break;
+        }
+        case "keyOn": {
+          this.keyOn(msg.data[0], msg.data[1], msg.data[2]);
+          break;
+        }
+        case "keyOff": {
+          this.keyOff(msg.data[0], msg.data[1], msg.data[2]);
           break;
         }
         case "param": {
@@ -231,6 +238,12 @@ var getFaustAudioWorkletProcessor = (dependencies, faustData, register = true) =
     }
     pitchWheel(channel, wheel) {
       this.fDSPCode.pitchWheel(channel, wheel);
+    }
+    keyOn(channel, pitch, velocity) {
+      this.fDSPCode.keyOn(channel, pitch, velocity);
+    }
+    keyOff(channel, pitch, velocity) {
+      this.fDSPCode.keyOff(channel, pitch, velocity);
     }
     propagateAcc(accelerationIncludingGravity, invert = false) {
       this.fDSPCode.propagateAcc(accelerationIncludingGravity, invert);
@@ -611,8 +624,7 @@ var getFaustFFTAudioWorkletProcessor = (dependencies, faustData, register = true
           continue;
         const [paramValue] = parameters[path];
         if (paramValue !== this.paramValuesCache[path]) {
-          this.fDSPCode.setParamValue(path, paramValue);
-          this.paramValuesCache[path] = paramValue;
+          this.setParamValue(path, paramValue);
         }
       }
       if (this.communicator.getNewAccDataAvailable()) {
@@ -1171,7 +1183,7 @@ function bufferFromSecret(secret) {
 }
 
 // src/FaustCompiler.ts
-var ab2str = (buf) => String.fromCharCode.apply(null, buf);
+var ab2str = (buf) => String.fromCharCode.apply(null, Array.from(buf));
 var str2ab = (str) => {
   const buf = new ArrayBuffer(str.length);
   const bufView = new Uint8Array(buf);
@@ -1309,7 +1321,7 @@ var _FaustCompiler = class _FaustCompiler {
     const path = isDouble ? "/usr/rsrc/mixer64.wasm" : "/usr/rsrc/mixer32.wasm";
     const mixerBuffer = this.fs().readFile(path, { encoding: "binary" });
     this[bufferKey] = mixerBuffer;
-    const mixerModule = await WebAssembly.compile(mixerBuffer);
+    const mixerModule = await WebAssembly.compile(new Uint8Array(mixerBuffer));
     this[moduleKey] = mixerModule;
     return { mixerBuffer, mixerModule };
   }
@@ -1321,7 +1333,7 @@ var _FaustCompiler = class _FaustCompiler {
     const path = isDouble ? "/usr/rsrc/mixer64.wasm" : "/usr/rsrc/mixer32.wasm";
     const mixerBuffer = this.fs().readFile(path, { encoding: "binary" });
     this[bufferKey] = mixerBuffer;
-    const mixerModule = new WebAssembly.Module(mixerBuffer);
+    const mixerModule = new WebAssembly.Module(new Uint8Array(mixerBuffer));
     this[moduleKey] = mixerModule;
     return { mixerBuffer, mixerModule };
   }
@@ -1513,7 +1525,7 @@ var FaustWasmInstantiator = class {
     try {
       let mixerBuffer = null;
       if (fs) {
-        mixerBuffer = fs.readFile(mixerPath, { encoding: "binary" });
+        mixerBuffer = new Uint8Array(fs.readFile(mixerPath, { encoding: "binary" }));
       } else {
         const mixerFile = await fetch(mixerPath);
         mixerBuffer = await mixerFile.arrayBuffer();
@@ -2112,6 +2124,10 @@ var FaustBaseWebAudioDsp = class _FaustBaseWebAudioDsp {
     // MIDI handling
     this.fPitchwheelLabel = [];
     this.fCtrlLabel = new Array(128).fill(null).map(() => []);
+    // array of MIDI key handlers; array index is the MIDI note number
+    this.fMidiKeyLabel = new Array(128).fill(null).map(() => []);
+    this.fMidiKeyOnLabel = new Array(128).fill(null).map(() => []);
+    this.fMidiKeyOffLabel = new Array(128).fill(null).map(() => []);
     this.fPathTable = {};
     this.fUICallback = (item) => {
       if (item.type === "hbargraph" || item.type === "vbargraph") {
@@ -2124,6 +2140,7 @@ var FaustBaseWebAudioDsp = class _FaustBaseWebAudioDsp {
         if (!item.meta)
           return;
         item.meta.forEach((meta) => {
+          var _a, _b, _c, _d, _e, _f;
           const { midi, acc, gyr } = meta;
           if (midi) {
             const strMidi = midi.trim();
@@ -2137,10 +2154,25 @@ var FaustBaseWebAudioDsp = class _FaustBaseWebAudioDsp {
             } else {
               const matched2 = strMidi.match(/^ctrl\s(\d+)\s(\d+)/);
               const matched1 = strMidi.match(/^ctrl\s(\d+)/);
+              const matchedKey = strMidi.match(/^key\s+(\d+)(?:\s+(\d+))?$/);
+              const matchedKeyOn = strMidi.match(/^keyon\s+(\d+)(?:\s+(\d+))?$/);
+              const matchedKeyOff = strMidi.match(/^keyoff\s+(\d+)(?:\s+(\d+))?$/);
               if (matched2) {
                 this.fCtrlLabel[parseInt(matched2[1])].push({ path: item.address, chan: parseInt(matched2[2]), min: item.min, max: item.max });
               } else if (matched1) {
                 this.fCtrlLabel[parseInt(matched1[1])].push({ path: item.address, chan: 0, min: item.min, max: item.max });
+              } else if (matchedKey) {
+                const note = parseInt(matchedKey[1]);
+                const channel = matchedKey[2] ? parseInt(matchedKey[2]) : 0;
+                this.fMidiKeyLabel[note].push({ path: item.address, chan: channel, min: (_a = item.min) != null ? _a : 0, max: (_b = item.max) != null ? _b : 1 });
+              } else if (matchedKeyOn) {
+                const note = parseInt(matchedKeyOn[1]);
+                const channel = matchedKeyOn[2] ? parseInt(matchedKeyOn[2]) : 0;
+                this.fMidiKeyOnLabel[note].push({ path: item.address, chan: channel, min: (_c = item.min) != null ? _c : 0, max: (_d = item.max) != null ? _d : 1 });
+              } else if (matchedKeyOff) {
+                const note = parseInt(matchedKeyOff[1]);
+                const channel = matchedKeyOff[2] ? parseInt(matchedKeyOff[2]) : 0;
+                this.fMidiKeyOffLabel[note].push({ path: item.address, chan: channel, min: (_e = item.min) != null ? _e : 0, max: (_f = item.max) != null ? _f : 1 });
               }
             }
           }
@@ -2340,7 +2372,6 @@ var FaustBaseWebAudioDsp = class _FaustBaseWebAudioDsp {
    * Init soundfiles memory.
    * 
    * @param allocator : the wasm memory allocator
-   * @param sfReader : the soundfile reader
    * @param baseDSP : the DSP struct (either a monophonic DSP of polyphonic voice) base DSP in the wasm memory
   */
   initSoundfileMemory(allocator, baseDSP) {
@@ -2373,6 +2404,13 @@ var FaustBaseWebAudioDsp = class _FaustBaseWebAudioDsp {
   getOutputParamHandler() {
     return this.fOutputHandler;
   }
+  callOutputParamHandler(path, value) {
+    if (this.fOutputHandler) {
+      this.fOutputHandler(path, value);
+    } else {
+      console.warn("No OutputParamHandler set for this Faust node.");
+    }
+  }
   setComputeHandler(handler) {
     this.fComputeHandler = handler;
   }
@@ -2402,6 +2440,15 @@ var FaustBaseWebAudioDsp = class _FaustBaseWebAudioDsp {
       return this.ctrlChange(channel, data1, data2);
     if (cmd === 14)
       return this.pitchWheel(channel, data2 * 128 + data1);
+    if (cmd === 9) {
+      if (data2 > 0)
+        return this.keyOn(channel, data1, data2);
+      else
+        return this.keyOff(channel, data1, data2);
+    }
+    if (cmd === 8) {
+      return this.keyOff(channel, data1, data2);
+    }
   }
   ctrlChange(channel, ctrl, value) {
     if (this.fPlotHandler)
@@ -2416,6 +2463,46 @@ var FaustBaseWebAudioDsp = class _FaustBaseWebAudioDsp {
         }
       });
     }
+  }
+  keyOn(channel, pitch, velocity) {
+    if (this.fPlotHandler)
+      this.fCachedEvents.push({ type: "keyOn", data: [channel, pitch, velocity] });
+    this.fMidiKeyOnLabel[pitch].forEach((key) => {
+      const { path, chan } = key;
+      if (chan === 0 || channel === chan - 1) {
+        this.setParamValue(path, _FaustBaseWebAudioDsp.remap(velocity, 0, 127, key.min, key.max));
+        if (this.fOutputHandler)
+          this.fOutputHandler(path, this.getParamValue(path));
+      }
+    });
+    this.fMidiKeyLabel[pitch].forEach((key) => {
+      const { path, chan } = key;
+      if (chan === 0 || channel === chan - 1) {
+        this.setParamValue(path, _FaustBaseWebAudioDsp.remap(velocity, 0, 127, key.min, key.max));
+        if (this.fOutputHandler)
+          this.fOutputHandler(path, this.getParamValue(path));
+      }
+    });
+  }
+  keyOff(channel, pitch, velocity) {
+    if (this.fPlotHandler)
+      this.fCachedEvents.push({ type: "keyOff", data: [channel, pitch, velocity] });
+    this.fMidiKeyOffLabel[pitch].forEach((key) => {
+      const { path, chan } = key;
+      if (chan === 0 || channel === chan - 1) {
+        this.setParamValue(path, _FaustBaseWebAudioDsp.remap(velocity, 0, 127, key.min, key.max));
+        if (this.fOutputHandler)
+          this.fOutputHandler(path, this.getParamValue(path));
+      }
+    });
+    this.fMidiKeyLabel[pitch].forEach((key) => {
+      const { path, chan } = key;
+      if (chan === 0 || channel === chan - 1) {
+        this.setParamValue(path, 0);
+        if (this.fOutputHandler)
+          this.fOutputHandler(path, this.getParamValue(path));
+      }
+    });
   }
   pitchWheel(channel, wheel) {
     if (this.fPlotHandler)
@@ -2602,6 +2689,7 @@ var FaustMonoWebAudioDsp = class extends FaustBaseWebAudioDsp {
 };
 var FaustWebAudioDspVoice = class _FaustWebAudioDspVoice {
   constructor($dsp, api, inputItems, pathTable, sampleRate) {
+    // -90 db
     this.fFreqLabel = [];
     this.fGateLabel = [];
     this.fGainLabel = [];
@@ -2614,7 +2702,6 @@ var FaustWebAudioDspVoice = class _FaustWebAudioDspVoice {
     this.fNextVel = -1;
     this.fDate = 0;
     this.fLevel = 0;
-    this.fRelease = 0;
     this.fDSP = $dsp;
     this.fAPI = api;
     this.fAPI.init(this.fDSP, sampleRate);
@@ -2637,7 +2724,7 @@ var FaustWebAudioDspVoice = class _FaustWebAudioDspVoice {
     return -4;
   }
   static get VOICE_STOP_LEVEL() {
-    return 5e-4;
+    return 3162e-8;
   }
   static midiToFreq(note) {
     return 440 * 2 ** ((note - 69) / 12);
@@ -2679,7 +2766,6 @@ var FaustWebAudioDspVoice = class _FaustWebAudioDspVoice {
     if (hard) {
       this.fCurNote = _FaustWebAudioDspVoice.kFreeVoice;
     } else {
-      this.fRelease = this.fAPI.getSampleRate(this.fDSP) / 2;
       this.fCurNote = _FaustWebAudioDspVoice.kReleaseVoice;
     }
   }
@@ -2783,11 +2869,13 @@ var FaustPolyWebAudioDsp = class _FaustPolyWebAudioDsp extends FaustBaseWebAudio
   getPlayingVoice(pitch) {
     let voicePlaying = FaustWebAudioDspVoice.kNoVoice;
     let oldestDatePlaying = Number.MAX_VALUE;
-    for (let voice = 0; voice < this.fInstance.voices; voice++) {
-      if (this.fVoiceTable[voice].fCurNote === pitch) {
-        if (this.fVoiceTable[voice].fDate < oldestDatePlaying) {
-          oldestDatePlaying = this.fVoiceTable[voice].fDate;
-          voicePlaying = voice;
+    for (let i = 0; i < this.fInstance.voices; i++) {
+      let curNote = this.fVoiceTable[i].fCurNote;
+      let nextNote = this.fVoiceTable[i].fNextNote;
+      if (curNote === pitch || curNote === FaustWebAudioDspVoice.kLegatoVoice && nextNote === pitch) {
+        if (this.fVoiceTable[i].fDate < oldestDatePlaying) {
+          oldestDatePlaying = this.fVoiceTable[i].fDate;
+          voicePlaying = i;
         }
       }
     }
@@ -2857,8 +2945,7 @@ var FaustPolyWebAudioDsp = class _FaustPolyWebAudioDsp extends FaustBaseWebAudio
       } else if (voice.fCurNote !== FaustWebAudioDspVoice.kFreeVoice) {
         voice.compute(this.fBufferSize, this.fAudioInputs, this.fAudioMixing);
         voice.fLevel = this.fInstance.mixerAPI.mixCheckVoice(this.fBufferSize, this.getNumOutputs(), this.fAudioMixing, this.fAudioOutputs);
-        voice.fRelease -= this.fBufferSize;
-        if (voice.fCurNote == FaustWebAudioDspVoice.kReleaseVoice && (voice.fLevel < FaustWebAudioDspVoice.VOICE_STOP_LEVEL && voice.fRelease < 0)) {
+        if (voice.fCurNote == FaustWebAudioDspVoice.kReleaseVoice && voice.fLevel < FaustWebAudioDspVoice.VOICE_STOP_LEVEL) {
           voice.fCurNote = FaustWebAudioDspVoice.kFreeVoice;
         }
       }
@@ -3024,6 +3111,9 @@ var FaustOfflineProcessor = class {
   getOutputParamHandler() {
     return this.fDSPCode.getOutputParamHandler();
   }
+  callOutputParamHandler(path, value) {
+    this.fDSPCode.callOutputParamHandler(path, value);
+  }
   setComputeHandler(handler) {
     this.fDSPCode.setComputeHandler(handler);
   }
@@ -3052,6 +3142,12 @@ var FaustOfflineProcessor = class {
   }
   pitchWheel(chan, value) {
     this.fDSPCode.pitchWheel(chan, value);
+  }
+  keyOn(channel, pitch, velocity) {
+    this.fDSPCode.keyOn(channel, pitch, velocity);
+  }
+  keyOff(channel, pitch, velocity) {
+    this.fDSPCode.keyOff(channel, pitch, velocity);
   }
   setParamValue(path, value) {
     this.fDSPCode.setParamValue(path, value);
@@ -3945,6 +4041,13 @@ var FaustAudioWorkletNode = class extends (globalThis.AudioWorkletNode || null) 
   getOutputParamHandler() {
     return this.fOutputHandler;
   }
+  callOutputParamHandler(path, value) {
+    if (this.fOutputHandler) {
+      this.fOutputHandler(path, value);
+    } else {
+      console.warn("No OutputParamHandler set for this Faust node.");
+    }
+  }
   setComputeHandler(handler) {
     this.fComputeHandler = handler;
   }
@@ -3989,6 +4092,10 @@ var FaustAudioWorkletNode = class extends (globalThis.AudioWorkletNode || null) 
       this.ctrlChange(channel, data1, data2);
     else if (cmd === 14)
       this.pitchWheel(channel, data2 * 128 + data1);
+    if (cmd === 8 || cmd === 9 && data2 === 0)
+      this.keyOff(channel, data1, data2);
+    else if (cmd === 9)
+      this.keyOn(channel, data1, data2);
     else
       this.port.postMessage({ type: "midi", data });
   }
@@ -3998,6 +4105,14 @@ var FaustAudioWorkletNode = class extends (globalThis.AudioWorkletNode || null) 
   }
   pitchWheel(channel, wheel) {
     const e = { type: "pitchWheel", data: [channel, wheel] };
+    this.port.postMessage(e);
+  }
+  keyOn(channel, pitch, velocity) {
+    const e = { type: "keyOn", data: [channel, pitch, velocity] };
+    this.port.postMessage(e);
+  }
+  keyOff(channel, pitch, velocity) {
+    const e = { type: "keyOff", data: [channel, pitch, velocity] };
     this.port.postMessage(e);
   }
   get hasAccInput() {
@@ -4163,42 +4278,14 @@ var FaustScriptProcessorNode = class extends (globalThis.ScriptProcessorNode || 
   async startSensors() {
     if (this.hasAccInput) {
       if (window.DeviceMotionEvent) {
-        if (typeof window.DeviceMotionEvent.requestPermission === "function") {
-          try {
-            const response = await window.DeviceMotionEvent.requestPermission();
-            if (response === "granted") {
-              window.addEventListener("devicemotion", this.handleDeviceMotion, true);
-            } else if (response === "denied") {
-              alert("You have denied access to motion and orientation data. To enable it, go to Settings > Safari > Motion & Orientation Access.");
-              throw new Error("Unable to access the accelerometer.");
-            }
-          } catch (error) {
-            console.error(error);
-          }
-        } else {
-          window.addEventListener("devicemotion", this.handleDeviceMotion, true);
-        }
+        window.addEventListener("devicemotion", this.handleDeviceMotion, true);
       } else {
         console.log("Cannot set the accelerometer handler.");
       }
     }
     if (this.hasGyrInput) {
       if (window.DeviceMotionEvent) {
-        if (typeof window.DeviceOrientationEvent.requestPermission === "function") {
-          try {
-            const response = await window.DeviceOrientationEvent.requestPermission();
-            if (response === "granted") {
-              window.addEventListener("deviceorientation", this.handleDeviceOrientation, true);
-            } else if (response === "denied") {
-              alert("You have denied access to motion and orientation data. To enable it, go to Settings > Safari > Motion & Orientation Access.");
-              throw new Error("Unable to access the gyroscope.");
-            }
-          } catch (error) {
-            console.error(error);
-          }
-        } else {
-          window.addEventListener("deviceorientation", this.handleDeviceOrientation, true);
-        }
+        window.addEventListener("deviceorientation", this.handleDeviceOrientation, true);
       } else {
         console.log("Cannot set the gyroscope handler.");
       }
@@ -4221,6 +4308,9 @@ var FaustScriptProcessorNode = class extends (globalThis.ScriptProcessorNode || 
   }
   getOutputParamHandler() {
     return this.fDSPCode.getOutputParamHandler();
+  }
+  callOutputParamHandler(path, value) {
+    this.fDSPCode.callOutputParamHandler(path, value);
   }
   setComputeHandler(handler) {
     this.fDSPCode.setComputeHandler(handler);
@@ -4250,6 +4340,12 @@ var FaustScriptProcessorNode = class extends (globalThis.ScriptProcessorNode || 
   }
   pitchWheel(chan, value) {
     this.fDSPCode.pitchWheel(chan, value);
+  }
+  keyOn(channel, pitch, velocity) {
+    this.fDSPCode.keyOn(channel, pitch, velocity);
+  }
+  keyOff(channel, pitch, velocity) {
+    this.fDSPCode.keyOff(channel, pitch, velocity);
   }
   setParamValue(path, value) {
     this.fDSPCode.setParamValue(path, value);

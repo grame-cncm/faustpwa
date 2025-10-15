@@ -1,7 +1,7 @@
 {
     "name": "atomicro",
     "filename": "atomicro.dsp",
-    "version": "2.78.3",
+    "version": "2.81.10",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 5041144,
-    "code": "4Ka+",
+    "code": "WFO7",
     "inputs": 1,
     "outputs": 2,
     "meta": [
@@ -21,7 +21,7 @@
             "basics_lib_name": "Faust Basic Element Library"
         },
         {
-            "basics_lib_version": "1.21.0"
+            "basics_lib_version": "1.22.0"
         },
         {
             "compile_options": "-single -scal -e ../atomicro.dsp -o atomicro.dsp"
@@ -30,7 +30,7 @@
             "delays_lib_name": "Faust Delay Library"
         },
         {
-            "delays_lib_version": "1.1.0"
+            "delays_lib_version": "1.2.0"
         },
         {
             "filename": "atomicro.dsp"
@@ -66,7 +66,7 @@
             "maths_lib_name": "Faust Math Library"
         },
         {
-            "maths_lib_version": "2.8.1"
+            "maths_lib_version": "2.9.0"
         },
         {
             "name": "atomicro"
@@ -84,7 +84,7 @@
             "signals_lib_version": "1.6.0"
         },
         {
-            "version": "2.78.6"
+            "version": "2.81.10"
         }
     ],
     "ui": [

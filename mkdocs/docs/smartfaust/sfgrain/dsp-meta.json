@@ -1,7 +1,7 @@
 {
     "name": "sfGrain",
     "filename": "sfGrain.dsp",
-    "version": "2.78.3",
+    "version": "2.81.10",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -10,7 +10,6 @@
         "."
     ],
     "size": 524488,
-    "code": "qHDe",
     "inputs": 0,
     "outputs": 2,
     "meta": [
@@ -27,7 +26,7 @@
             "delays_lib_name": "Faust Delay Library"
         },
         {
-            "delays_lib_version": "1.1.0"
+            "delays_lib_version": "1.2.0"
         },
         {
             "filename": "sfGrain.dsp"
@@ -69,7 +68,7 @@
             "filters_lib_tf1s_license": "MIT-style STK-4.3 license"
         },
         {
-            "filters_lib_version": "1.6.0"
+            "filters_lib_version": "1.7.1"
         },
         {
             "grain_out_v0_6_dsp_author": "Christophe Lebreton"
@@ -159,7 +158,7 @@
             "maths_lib_name": "Faust Math Library"
         },
         {
-            "maths_lib_version": "2.8.1"
+            "maths_lib_version": "2.9.0"
         },
         {
             "name": "sfGrain"
@@ -180,7 +179,7 @@
             "soundfiles": "https://raw.githubusercontent.com/grame-cncm/smartfaust/master/src/sfGrain"
         },
         {
-            "version": "2.78.6"
+            "version": "2.81.10"
         }
     ],
     "ui": [
@@ -294,6 +293,7 @@
                             "type": "soundfile",
                             "label": "sounds",
                             "varname": "fSoundfile0",
+                            "shortname": "sounds",
                             "url": "{-sampleA.flac-;-sampleB.flac-;-sampleC.flac-;-sampleD.flac-;-sampleE.flac-;-sampleF.flac-;-sampleG.flac-;-sampleH.flac-}",
                             "address": "/sfGrain/select_your_sample_1_to_7/sounds",
                             "index": 0

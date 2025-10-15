@@ -1,7 +1,7 @@
 {
     "name": "sequenceur",
     "filename": "sequenceur.dsp",
-    "version": "2.78.3",
+    "version": "2.81.10",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 336,
-    "code": "COni",
+    "code": "iEvd",
     "inputs": 0,
     "outputs": 2,
     "meta": [
@@ -24,7 +24,7 @@
             "basics_lib_pulse_countup_loop_author": "Vince"
         },
         {
-            "basics_lib_version": "1.21.0"
+            "basics_lib_version": "1.22.0"
         },
         {
             "compile_options": "-single -scal -e ../sequenceur.dsp -o sequenceur.dsp"
@@ -60,7 +60,7 @@
             "maths_lib_name": "Faust Math Library"
         },
         {
-            "maths_lib_version": "2.8.1"
+            "maths_lib_version": "2.9.0"
         },
         {
             "name": "sequenceur"
@@ -81,7 +81,7 @@
             "soundfiles": "https://raw.githubusercontent.com/grame-cncm/GameLAN/master/sequenceur"
         },
         {
-            "version": "2.78.6"
+            "version": "2.81.10"
         }
     ],
     "ui": [
@@ -403,6 +403,7 @@
                     "type": "soundfile",
                     "label": "sample_2",
                     "varname": "fSoundfile0",
+                    "shortname": "sample_2",
                     "url": "{-Bipsquare_oneshot.flac-}",
                     "address": "/sequenceur/sample_2",
                     "index": 0
@@ -411,6 +412,7 @@
                     "type": "soundfile",
                     "label": "sample_4",
                     "varname": "fSoundfile1",
+                    "shortname": "sample_4",
                     "url": "{-Hihat_oneshot_N.flac-}",
                     "address": "/sequenceur/sample_4",
                     "index": 4
@@ -419,6 +421,7 @@
                     "type": "soundfile",
                     "label": "sample_6",
                     "varname": "fSoundfile2",
+                    "shortname": "sample_6",
                     "url": "{-Kick_oneshot_N.flac-}",
                     "address": "/sequenceur/sample_6",
                     "index": 8
@@ -427,6 +430,7 @@
                     "type": "soundfile",
                     "label": "sample_8",
                     "varname": "fSoundfile3",
+                    "shortname": "sample_8",
                     "url": "{-Snare_oneshot_N.flac-}",
                     "address": "/sequenceur/sample_8",
                     "index": 12

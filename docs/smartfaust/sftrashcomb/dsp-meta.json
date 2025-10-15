@@ -1,7 +1,7 @@
 {
     "name": "sfTrashComb",
     "filename": "sfTrashComb.dsp",
-    "version": "2.78.3",
+    "version": "2.81.10",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -9,8 +9,8 @@
         "/usr/share/faust",
         "."
     ],
-    "size": 524384,
-    "code": "8GWz",
+    "size": 524376,
+    "code": "OIyx",
     "inputs": 1,
     "outputs": 2,
     "meta": [
@@ -27,16 +27,19 @@
             "delays_lib_name": "Faust Delay Library"
         },
         {
-            "delays_lib_version": "1.1.0"
+            "delays_lib_version": "1.2.0"
         },
         {
             "filename": "sfTrashComb.dsp"
         },
         {
+            "filters_lib_fb_comb_common_author": "Oleg Nesterov"
+        },
+        {
             "filters_lib_fb_fcomb_author": "Julius O. Smith III"
         },
         {
-            "filters_lib_fb_fcomb_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+            "filters_lib_fb_fcomb_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>, revised by Oleg Nesterov"
         },
         {
             "filters_lib_fb_fcomb_license": "MIT-style STK-4.3 license"
@@ -48,7 +51,7 @@
             "filters_lib_name": "Faust Filters Library"
         },
         {
-            "filters_lib_version": "1.6.0"
+            "filters_lib_version": "1.7.1"
         },
         {
             "library_path0": "/usr/local/share/faust/stdfaust.lib"
@@ -84,7 +87,7 @@
             "maths_lib_name": "Faust Math Library"
         },
         {
-            "maths_lib_version": "2.8.1"
+            "maths_lib_version": "2.9.0"
         },
         {
             "name": "sfTrashComb"
@@ -102,7 +105,7 @@
             "signals_lib_version": "1.6.0"
         },
         {
-            "version": "2.78.6"
+            "version": "2.81.10"
         }
     ],
     "ui": [
@@ -169,7 +172,7 @@
                             "varname": "fVslider2",
                             "shortname": "freq",
                             "address": "/sfTrashComb/sfTrashComb_parameter_s_/freq",
-                            "index": 524336,
+                            "index": 48,
                             "meta": [
                                 {
                                     "acc": "0 0 -10 0 10"
@@ -192,7 +195,7 @@
                             "varname": "fVslider3",
                             "shortname": "gain",
                             "address": "/sfTrashComb/sfTrashComb_parameter_s_/gain",
-                            "index": 524364,
+                            "index": 524356,
                             "meta": [
                                 {
                                     "acc": "2 1 -10 0 10"

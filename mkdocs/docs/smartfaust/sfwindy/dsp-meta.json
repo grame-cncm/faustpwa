@@ -1,7 +1,7 @@
 {
     "name": "sfWindy",
     "filename": "sfWindy.dsp",
-    "version": "2.78.3",
+    "version": "2.81.10",
     "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
     "include_pathnames": [
         "/share/faust",
@@ -10,7 +10,7 @@
         "."
     ],
     "size": 216,
-    "code": "UIdhASQPHw==",
+    "code": "uGVLATQ5Hw==",
     "inputs": 0,
     "outputs": 2,
     "meta": [
@@ -18,7 +18,7 @@
             "analyzers_lib_name": "Faust Analyzer Library"
         },
         {
-            "analyzers_lib_version": "1.2.0"
+            "analyzers_lib_version": "1.3.0"
         },
         {
             "author": "Christophe Lebreton"
@@ -27,7 +27,7 @@
             "basics_lib_name": "Faust Basic Element Library"
         },
         {
-            "basics_lib_version": "1.21.0"
+            "basics_lib_version": "1.22.0"
         },
         {
             "compile_options": "-single -scal -e ../sfWindy.dsp -o sfWindy.dsp"
@@ -147,7 +147,7 @@
             "filters_lib_tf2s_license": "MIT-style STK-4.3 license"
         },
         {
-            "filters_lib_version": "1.6.0"
+            "filters_lib_version": "1.7.1"
         },
         {
             "filters_lib_zero_author": "Julius O. Smith III"
@@ -201,7 +201,7 @@
             "maths_lib_name": "Faust Math Library"
         },
         {
-            "maths_lib_version": "2.8.1"
+            "maths_lib_version": "2.9.0"
         },
         {
             "name": "sfWindy"
@@ -210,7 +210,7 @@
             "noises_lib_name": "Faust Noise Generator Library"
         },
         {
-            "noises_lib_version": "1.4.1"
+            "noises_lib_version": "1.5.0"
         },
         {
             "platform_lib_name": "Generic Platform Library"
@@ -255,10 +255,10 @@
             "vaeffects_lib_name": "Faust Virtual Analog Filter Effect Library"
         },
         {
-            "vaeffects_lib_version": "1.2.1"
+            "vaeffects_lib_version": "1.4.0"
         },
         {
-            "version": "2.78.6"
+            "version": "2.81.10"
         }
     ],
     "ui": [
